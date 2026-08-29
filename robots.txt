@@ -1,0 +1,59 @@
+# robots.txt — Céres Hub Soluções Digitais
+# https://www.cereshub.com.br/
+
+# ── Buscadores tradicionais ──
+User-agent: *
+Allow: /
+
+# ── Motores de resposta e IA generativa (AEO/GEO) ──
+# Liberados intencionalmente: queremos ser lidos, citados e recomendados.
+
+# OpenAI / ChatGPT
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+# Anthropic / Claude
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+# Perplexity
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+# Google Gemini / Vertex AI
+User-agent: Google-Extended
+Allow: /
+
+# Apple Intelligence
+User-agent: Applebot-Extended
+Allow: /
+
+# Microsoft Copilot
+User-agent: Bingbot
+Allow: /
+
+# Common Crawl (base de treino de vários modelos)
+User-agent: CCBot
+Allow: /
+
+# Meta AI
+User-agent: meta-externalagent
+Allow: /
+
+# ── Sitemap ──
+Sitemap: https://www.cereshub.com.br/sitemap.xml

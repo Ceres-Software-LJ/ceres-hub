@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <url>
+    <loc>https://www.cereshub.com.br/</loc>
+    <lastmod>2026-08-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+
+    <image:image>
+      <image:loc>https://www.cereshub.com.br/assets/images/brand/logo.png</image:loc>
+      <image:title>Céres Hub Soluções Digitais</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.cereshub.com.br/assets/images/portfolio/flowbloc.png</image:loc>
+      <image:title>FlowBloc — site desenvolvido pela Céres Hub</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.cereshub.com.br/assets/images/portfolio/finbloc.png</image:loc>
+      <image:title>FinBloc — site desenvolvido pela Céres Hub</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.cereshub.com.br/assets/images/portfolio/kuralabs.png</image:loc>
+      <image:title>Kura Lab — site desenvolvido pela Céres Hub</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.cereshub.com.br/assets/images/portfolio/mp-engenharia.png</image:loc>
+      <image:title>MP Engenharia — site desenvolvido pela Céres Hub</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.cereshub.com.br/assets/images/portfolio/axa-foto.png</image:loc>
+      <image:title>Axa Foto Autorizada — site desenvolvido pela Céres Hub</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.cereshub.com.br/assets/images/portfolio/viva-beleza.png</image:loc>
+      <image:title>Viva Espaço de Beleza — site desenvolvido pela Céres Hub</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.cereshub.com.br/assets/images/portfolio/amana.png</image:loc>
+      <image:title>Amaná Makramiya — site desenvolvido pela Céres Hub</image:title>
+    </image:image>
+  </url>
+
+</urlset>
