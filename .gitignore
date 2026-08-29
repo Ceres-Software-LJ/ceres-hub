@@ -4,3 +4,4 @@ docs/
 Thumbs.db
 node_modules/
 .env
+*.stackdump
