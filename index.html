@@ -3,17 +3,34 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Céres Hub, agência digital em Campo Grande, MS. Criamos sites modernos, responsivos e de alta performance que convertem visitantes em clientes. Registro de domínios, SEO técnico e suporte completo.">
+  <meta name="description" content="Agência digital em Campo Grande, MS. Sites a partir de R$ 800 com entrega em 30 dias: rápidos e feitos para converter. Domínio, SEO local e suporte.">
   <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#16283D">
-  <meta property="og:title" content="Céres Hub | Agência Digital em Campo Grande, MS">
-  <meta property="og:description" content="Sites modernos, responsivos e de alta performance que convertem visitantes em clientes. Do domínio ao lançamento, cuidamos de tudo.">
+  <meta property="og:title" content="Criação de Sites em Campo Grande, MS | Céres Hub">
+  <meta property="og:description" content="Sites a partir de R$ 800, entregues em 30 dias. Agência digital em Campo Grande, MS: domínio, SEO local e suporte, do primeiro contato ao lançamento.">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="pt_BR">
+  <meta property="og:url" content="https://www.cereshub.com.br/">
+  <meta property="og:image" content="https://www.cereshub.com.br/assets/images/brand/logo.png">
+  <meta property="og:image:alt" content="Logotipo da Céres Hub Soluções Digitais">
+  <meta property="og:site_name" content="Céres Hub">
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Criação de Sites em Campo Grande, MS | Céres Hub">
+  <meta name="twitter:description" content="Sites a partir de R$ 800 com entrega em 30 dias. Agência digital em Campo Grande, MS.">
+  <meta name="twitter:image" content="https://www.cereshub.com.br/assets/images/brand/logo.png">
+
+  <!-- Geolocalização (SEO local) -->
+  <meta name="geo.region" content="BR-MS">
+  <meta name="geo.placename" content="Campo Grande">
+  <meta name="geo.position" content="-20.4697;-54.6201">
+  <meta name="ICBM" content="-20.4697, -54.6201">
+  <meta name="author" content="Céres Hub Soluções Digitais">
   <link rel="icon" type="image/png" href="assets/images/brand/logo.png">
   <link rel="apple-touch-icon" href="assets/images/brand/logo.png">
-  <link rel="canonical" href="https://cereshub.com.br/">
-  <title>Céres Hub | Agência Digital em Campo Grande, MS</title>
+  <link rel="canonical" href="https://www.cereshub.com.br/">
+  <title>Criação de Sites em Campo Grande, MS | Céres Hub</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap">
 
@@ -1396,7 +1413,302 @@
     .whatsapp-fab { bottom: 16px; right: 16px; width: 52px; height: 52px; }
     .whatsapp-fab svg { width: 26px; height: 26px; }
   }
+
+  /* ── FAQ (AEO) ── */
+  .faq { background: var(--surface); }
+  .faq__list { max-width: 820px; margin: 0 auto; display: flex; flex-direction: column; gap: 14px; }
+  .faq__item {
+    background: var(--card-bg);
+    border: 1px solid var(--divider);
+    border-radius: var(--radius-card);
+    box-shadow: var(--shadow-card);
+    overflow: hidden;
+    transition: box-shadow 0.25s, border-color 0.25s;
+  }
+  .faq__item[open] { border-color: var(--sky-20); box-shadow: var(--shadow-hover); }
+  .faq__q {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    padding: 22px 26px;
+    font-family: 'Space Grotesk', system-ui, sans-serif;
+    font-weight: 600; font-size: 1.0625rem; line-height: 1.4; color: var(--navy);
+    cursor: pointer; list-style: none;
+  }
+  .faq__q::-webkit-details-marker { display: none; }
+  .faq__q:hover { color: var(--blue-str); }
+  .faq__q:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
+  .faq__icon { flex-shrink: 0; width: 20px; height: 20px; color: var(--accent); transition: transform 0.25s; }
+  .faq__item[open] .faq__icon { transform: rotate(45deg); }
+  .faq__a { padding: 0 26px 24px; color: var(--text-muted); font-size: 0.9375rem; }
+  .faq__a p + p { margin-top: 10px; }
+  .faq__a strong { color: var(--text-body); font-weight: 600; }
+  .faq__a ul { margin: 10px 0 0; padding-left: 20px; }
+  .faq__a li { margin-bottom: 6px; }
+  @media (prefers-reduced-motion: reduce) {
+    .faq__item, .faq__icon { transition: none; }
+  }
+  @media (max-width: 640px) {
+    .faq__q { padding: 18px 20px; font-size: 1rem; }
+    .faq__a { padding: 0 20px 20px; }
+  }
 </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": [
+        "ProfessionalService",
+        "LocalBusiness"
+      ],
+      "@id": "https://www.cereshub.com.br/#organizacao",
+      "name": "Céres Hub Soluções Digitais",
+      "alternateName": [
+        "Céres Hub",
+        "Ceres Hub"
+      ],
+      "url": "https://www.cereshub.com.br/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.cereshub.com.br/assets/images/brand/logo.png"
+      },
+      "image": "https://www.cereshub.com.br/assets/images/brand/logo.png",
+      "description": "Agência digital em Campo Grande, MS. Criação de sites responsivos e de alta performance a partir de R$ 800, com entrega em 30 dias, registro e gestão de domínios, SEO local e suporte contínuo.",
+      "email": "ceres.cto@gmail.com",
+      "telephone": "+5567992473726",
+      "priceRange": "A partir de R$ 800",
+      "currenciesAccepted": "BRL",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Campo Grande",
+        "addressRegion": "MS",
+        "addressCountry": "BR"
+      },
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Campo Grande"
+        },
+        {
+          "@type": "State",
+          "name": "Mato Grosso do Sul"
+        },
+        {
+          "@type": "Country",
+          "name": "Brasil"
+        }
+      ],
+      "availableChannel": {
+        "@type": "ServiceChannel",
+        "serviceType": "Atendimento por videochamada e WhatsApp",
+        "servicePhone": "+5567992473726",
+        "serviceUrl": "https://wa.me/5567992473726"
+      },
+      "sameAs": [
+        "https://instagram.com/ceres_solucoes"
+      ],
+      "knowsAbout": [
+        "criação de sites",
+        "desenvolvimento web",
+        "landing pages",
+        "registro de domínios",
+        "SEO local",
+        "Core Web Vitals",
+        "Google Business Profile",
+        "design responsivo"
+      ],
+      "employee": [
+        {
+          "@type": "Person",
+          "name": "Luis",
+          "jobTitle": "Desenvolvedor"
+        },
+        {
+          "@type": "Person",
+          "name": "João",
+          "jobTitle": "Administrador"
+        }
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Serviços da Céres Hub",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Criação de Websites",
+              "description": "Sites institucionais e landing pages com design exclusivo e responsivo, otimizados para mobile e velocidade, com integração a WhatsApp e redes sociais. Prazo de entrega de 30 dias.",
+              "provider": {
+                "@id": "https://www.cereshub.com.br/#organizacao"
+              },
+              "areaServed": [
+                {
+                  "@type": "City",
+                  "name": "Campo Grande"
+                },
+                {
+                  "@type": "Country",
+                  "name": "Brasil"
+                }
+              ]
+            },
+            "url": "https://www.cereshub.com.br/#servicos",
+            "priceCurrency": "BRL",
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "minPrice": 800,
+              "priceCurrency": "BRL",
+              "valueAddedTaxIncluded": true
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Registro & Gestão de Domínios",
+              "description": "Busca e registro de domínios, configuração de DNS e e-mail profissional, alertas de renovação e migração assistida.",
+              "provider": {
+                "@id": "https://www.cereshub.com.br/#organizacao"
+              },
+              "areaServed": [
+                {
+                  "@type": "City",
+                  "name": "Campo Grande"
+                },
+                {
+                  "@type": "Country",
+                  "name": "Brasil"
+                }
+              ]
+            },
+            "url": "https://www.cereshub.com.br/#servicos"
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Otimização & SEO",
+              "description": "Configuração de meta tags e estrutura, Google Analytics e Search Console, velocidade e Core Web Vitals e SEO local via Google Business.",
+              "provider": {
+                "@id": "https://www.cereshub.com.br/#organizacao"
+              },
+              "areaServed": [
+                {
+                  "@type": "City",
+                  "name": "Campo Grande"
+                },
+                {
+                  "@type": "Country",
+                  "name": "Brasil"
+                }
+              ]
+            },
+            "url": "https://www.cereshub.com.br/#servicos"
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Suporte & Manutenção",
+              "description": "Monitoramento de disponibilidade, atualizações de conteúdo, backups automáticos mensais e suporte via WhatsApp em horário comercial.",
+              "provider": {
+                "@id": "https://www.cereshub.com.br/#organizacao"
+              },
+              "areaServed": [
+                {
+                  "@type": "City",
+                  "name": "Campo Grande"
+                },
+                {
+                  "@type": "Country",
+                  "name": "Brasil"
+                }
+              ]
+            },
+            "url": "https://www.cereshub.com.br/#servicos"
+          }
+        ]
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.cereshub.com.br/#website",
+      "url": "https://www.cereshub.com.br/",
+      "name": "Céres Hub",
+      "inLanguage": "pt-BR",
+      "publisher": {
+        "@id": "https://www.cereshub.com.br/#organizacao"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.cereshub.com.br/#faq",
+      "inLanguage": "pt-BR",
+      "isPartOf": {
+        "@id": "https://www.cereshub.com.br/#website"
+      },
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Quanto custa criar um site em Campo Grande?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Os sites da Céres Hub começam em R$ 800. O valor final depende do escopo: número de páginas, integrações necessárias, se inclui o registro do domínio e se haverá manutenção contínua depois do lançamento. A Céres Hub monta o orçamento após uma reunião de descoberta, em que entende o negócio, o público-alvo e os objetivos. Fale pelo WhatsApp (67) 9 9247-3726 para receber uma estimativa do seu caso."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Quanto tempo leva para o site ficar pronto?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "O prazo de entrega é de 30 dias, contados a partir da reunião de descoberta. Nesse período o projeto passa por quatro etapas: descoberta, com reunião estratégica sobre negócio, público-alvo, concorrência e objetivos; arquitetura e design, com wireframes, paleta de cores e estratégia de conteúdo; desenvolvimento, com codificação e refino por feedbacks iterativos até a aprovação; e lançamento, com publicação, configuração de domínio e analytics."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "A Céres Hub registra o domínio para mim?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sim. O serviço de Registro & Gestão de Domínios cobre a busca e o registro do domínio, a configuração de DNS e e-mail profissional, alertas automáticos de renovação e a transferência ou migração assistida de domínios que já existem."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "O site vai funcionar bem no celular?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sim. Todo site entregue pela Céres Hub é responsivo e otimizado para mobile e velocidade, com acompanhamento dos Core Web Vitals, as métricas que o Google usa para medir a experiência de carregamento e estabilidade visual da página."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Vocês dão suporte depois que o site entra no ar?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sim. O serviço de Suporte & Manutenção inclui monitoramento de disponibilidade, atualizações de conteúdo e plugins, backups automáticos mensais e atendimento via WhatsApp em horário comercial."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "O que é SEO local e a Céres Hub faz esse serviço?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "SEO local é o conjunto de otimizações que faz uma empresa aparecer nas buscas de quem procura serviços perto de si, como \"agência digital em Campo Grande\" ou \"criação de sites em Campo Grande\", e também no mapa do Google. A Céres Hub faz esse trabalho: configuração de meta tags e estrutura, Google Analytics e Search Console, ajustes de velocidade e Core Web Vitals e otimização do perfil no Google Business."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "A Céres Hub atende empresas fora de Campo Grande?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sim. A Céres Hub é sediada em Campo Grande, Mato Grosso do Sul, e atende empresas de outras cidades de MS e do restante do Brasil. Todo o processo, da reunião de descoberta às aprovações de design e ao lançamento, é conduzido por videochamada e WhatsApp, sem necessidade de encontro presencial."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
 </head>
 <body>
 
@@ -1412,6 +1724,7 @@
       <a href="#portfolio">Portfólio</a>
       <a href="#servicos">Serviços</a>
       <a href="#processo">Processo</a>
+      <a href="#faq">FAQ</a>
       <a href="#contato">Contato</a>
     </div>
     <a href="https://wa.me/5567992473726" target="_blank" rel="noopener" class="btn nav__cta nav__cta-desktop">
@@ -1435,11 +1748,11 @@
         <span>Agência Digital · Mato Grosso do Sul</span>
       </div>
       <h1 class="hero__title">
-        Conectando sua empresa<br>
-        ao <em>futuro digital.</em>
+        Criação de sites em Campo Grande<br>
+        para conectar sua empresa ao <em>futuro digital.</em>
       </h1>
       <p class="hero__sub">
-        Criamos sites modernos, responsivos e de alta performance que convertem visitantes em clientes. Com gestão de domínios e estratégia digital de ponta a ponta.
+        Agência digital em Campo Grande, MS. Criamos sites modernos, responsivos e de alta performance que convertem visitantes em clientes, com gestão de domínios e estratégia digital de ponta a ponta.
       </p>
       <div class="hero__actions">
         <a href="#portfolio" class="btn btn--primary">
@@ -1700,15 +2013,15 @@
         </div>
       </article>
 
-      <!-- Project 3: KuraLabs -->
+      <!-- Project 3: Kura Lab -->
       <article class="project-card">
         <div class="browser-mock">
           <div class="browser-bar">
             <div class="browser-dots"><span></span><span></span><span></span></div>
-            <div class="browser-url">kuralabs.com.br</div>
+            <div class="browser-url">kuralab.com.br</div>
           </div>
           <div class="browser-screen" style="background:#0a0f1a">
-            <img class="browser-screen-img" src="assets/images/portfolio/kuralabs.png" alt="Kura Labs" loading="lazy">
+            <img class="browser-screen-img" src="assets/images/portfolio/kuralabs.png" alt="Kura Lab" loading="lazy">
             <div class="browser-screen-scrim"></div>
           </div>
         </div>
@@ -1717,9 +2030,9 @@
             <span class="tag">Tecnologia</span>
             <span class="tag">Institucional</span>
           </div>
-          <h3 class="project-card__name">Kura Labs</h3>
+          <h3 class="project-card__name">Kura Lab</h3>
           <p class="project-card__desc">Site institucional de laboratório de inovação e tecnologia. Em breve online.</p>
-          <a href="https://kuralabs.com.br" target="_blank" rel="noopener" class="project-card__link">
+          <a href="https://kuralab.com.br/" target="_blank" rel="noopener" class="project-card__link">
             Visitar Site
             <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M2 7h10M7 2l5 5-5 5"/></svg>
           </a>
@@ -1798,6 +2111,32 @@
           <h3 class="project-card__name">Axa Foto Autorizada</h3>
           <p class="project-card__desc">"Nas mãos de quem entende de fotografia." Assistência técnica autorizada para câmeras digitais e analógicas, com atuação desde 1998 em Campo Grande.</p>
           <a href="https://axa-foto.vercel.app/" target="_blank" rel="noopener" class="project-card__link">
+            Visitar Site
+            <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M2 7h10M7 2l5 5-5 5"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <!-- Project 7: Viva Espaço de Beleza -->
+      <article class="project-card">
+        <div class="browser-mock">
+          <div class="browser-bar">
+            <div class="browser-dots"><span></span><span></span><span></span></div>
+            <div class="browser-url">viva-espaco-beleza.vercel.app</div>
+          </div>
+          <div class="browser-screen" style="background:#120810">
+            <img class="browser-screen-img" src="assets/images/portfolio/viva-beleza.png" alt="Viva Espaço de Beleza" loading="lazy">
+            <div class="browser-screen-scrim"></div>
+          </div>
+        </div>
+        <div class="project-card__body">
+          <div class="project-card__tags">
+            <span class="tag">Beleza</span>
+            <span class="tag">Salão</span>
+          </div>
+          <h3 class="project-card__name">Viva Espaço de Beleza</h3>
+          <p class="project-card__desc">"Manicure, cabelo e unhas com o capricho que dura." Salão inclusivo em Campo Grande com 4,7★ no Google: manicure, gel, escova e hidratação capilar.</p>
+          <a href="https://viva-espaco-beleza.vercel.app/" target="_blank" rel="noopener" class="project-card__link">
             Visitar Site
             <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M2 7h10M7 2l5 5-5 5"/></svg>
           </a>
@@ -2060,6 +2399,53 @@
 </main><!-- /#conteudo-principal -->
 
 <!-- ══ FOOTER / CONTACT ══ -->
+
+<section class="section faq" id="faq">
+  <div class="container">
+    <div class="section-header section-header--centered">
+      <span class="eyebrow">Perguntas Frequentes</span>
+      <h2 class="section-title">Dúvidas sobre criar um site em Campo Grande</h2>
+      <p class="section-sub">As perguntas que mais recebemos de empresas de Campo Grande e região.</p>
+    </div>
+    <div class="faq__list">
+      <details class="faq__item">
+        <summary class="faq__q">Quanto custa criar um site em Campo Grande?<svg class="faq__icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M10 4v12M4 10h12"/></svg></summary>
+        <div class="faq__a"><p><strong>Os sites da Céres Hub começam em R$ 800.</strong> O valor final depende do escopo: número de páginas, integrações necessárias, se inclui o registro do domínio e se haverá manutenção contínua depois do lançamento.</p><p>A Céres Hub monta o orçamento após uma reunião de descoberta, em que entende o negócio, o público-alvo e os objetivos. Fale pelo WhatsApp <strong>(67) 9 9247-3726</strong> para receber uma estimativa do seu caso.</p></div>
+      </details>
+
+      <details class="faq__item">
+        <summary class="faq__q">Quanto tempo leva para o site ficar pronto?<svg class="faq__icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M10 4v12M4 10h12"/></svg></summary>
+        <div class="faq__a"><p><strong>O prazo de entrega é de 30 dias</strong>, contados a partir da reunião de descoberta. Nesse período o projeto passa por quatro etapas:</p><ul><li><strong>Descoberta</strong> — reunião estratégica sobre negócio, público-alvo, concorrência e objetivos.</li><li><strong>Arquitetura e design</strong> — wireframes, paleta de cores e estratégia de conteúdo.</li><li><strong>Desenvolvimento</strong> — codificação e refino com feedbacks iterativos até a aprovação.</li><li><strong>Lançamento</strong> — publicação, configuração de domínio e analytics.</li></ul></div>
+      </details>
+
+      <details class="faq__item">
+        <summary class="faq__q">A Céres Hub registra o domínio para mim?<svg class="faq__icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M10 4v12M4 10h12"/></svg></summary>
+        <div class="faq__a"><p><strong>Sim.</strong> O serviço de Registro &amp; Gestão de Domínios cobre a busca e o registro do domínio, a configuração de DNS e e-mail profissional, alertas automáticos de renovação e a transferência ou migração assistida de domínios que já existem.</p></div>
+      </details>
+
+      <details class="faq__item">
+        <summary class="faq__q">O site vai funcionar bem no celular?<svg class="faq__icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M10 4v12M4 10h12"/></svg></summary>
+        <div class="faq__a"><p><strong>Sim.</strong> Todo site entregue pela Céres Hub é responsivo e otimizado para mobile e velocidade, com acompanhamento dos Core Web Vitals — as métricas que o Google usa para medir a experiência de carregamento e estabilidade visual da página.</p></div>
+      </details>
+
+      <details class="faq__item">
+        <summary class="faq__q">Vocês dão suporte depois que o site entra no ar?<svg class="faq__icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M10 4v12M4 10h12"/></svg></summary>
+        <div class="faq__a"><p><strong>Sim.</strong> O serviço de Suporte &amp; Manutenção inclui monitoramento de disponibilidade, atualizações de conteúdo e plugins, backups automáticos mensais e atendimento via WhatsApp em horário comercial.</p></div>
+      </details>
+
+      <details class="faq__item">
+        <summary class="faq__q">O que é SEO local e a Céres Hub faz esse serviço?<svg class="faq__icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M10 4v12M4 10h12"/></svg></summary>
+        <div class="faq__a"><p><strong>SEO local é o conjunto de otimizações que faz uma empresa aparecer nas buscas de quem procura serviços perto de si</strong> — como “agência digital em Campo Grande” ou “criação de sites em Campo Grande” — e também no mapa do Google.</p><p>A Céres Hub faz esse trabalho: configuração de meta tags e estrutura, Google Analytics e Search Console, ajustes de velocidade e Core Web Vitals e otimização do perfil no Google Business.</p></div>
+      </details>
+
+      <details class="faq__item">
+        <summary class="faq__q">A Céres Hub atende empresas fora de Campo Grande?<svg class="faq__icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M10 4v12M4 10h12"/></svg></summary>
+        <div class="faq__a"><p><strong>Sim.</strong> A Céres Hub é sediada em <strong>Campo Grande, Mato Grosso do Sul</strong>, e atende empresas de outras cidades de MS e do restante do Brasil. Todo o processo — reunião de descoberta, aprovações de design e lançamento — é conduzido por videochamada e WhatsApp, sem necessidade de encontro presencial.</p></div>
+      </details>
+    </div>
+  </div>
+</section>
+
 <footer class="footer" id="contato">
   <div class="footer__inner">
     <div class="footer__brand">
@@ -2079,6 +2465,7 @@
         <a href="#portfolio">Portfólio</a>
         <a href="#servicos">Serviços</a>
         <a href="#processo">Processo</a>
+        <a href="#faq">FAQ</a>
         <a href="#contato">Contato</a>
       </div>
     </div>
@@ -2111,7 +2498,7 @@
   </div>
 
   <div class="footer__bottom">
-    <span class="footer__copy">© 2025 Céres Hub Soluções Digitais. Todos os direitos reservados.</span>
+    <span class="footer__copy">© 2026 Céres Hub Soluções Digitais. Todos os direitos reservados.</span>
     <div class="footer__socials">
       <a href="https://instagram.com/ceres_solucoes" target="_blank" rel="noopener" class="social-link" aria-label="Instagram">
         <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C5.83 0 5.56.01 4.7.05 3.85.09 3.27.24 2.77.46A3.9 3.9 0 001.37 1.4 3.9 3.9 0 00.46 2.77C.24 3.27.09 3.85.05 4.7.01 5.56 0 5.83 0 8s.01 2.44.05 3.3c.04.85.19 1.43.41 1.93.23.5.53.94.97 1.37.43.44.87.74 1.37.97.5.22 1.08.37 1.93.41C5.56 15.99 5.83 16 8 16s2.44-.01 3.3-.05c.85-.04 1.43-.19 1.93-.41a3.9 3.9 0 001.37-.97 3.9 3.9 0 00.97-1.37c.22-.5.37-1.08.41-1.93.04-.86.05-1.13.05-3.3s-.01-2.44-.05-3.3c-.04-.85-.19-1.43-.41-1.93A3.9 3.9 0 0014.6 1.4 3.9 3.9 0 0013.23.46C12.73.24 12.15.09 11.3.05 10.44.01 10.17 0 8 0zm0 1.44c2.14 0 2.39.01 3.23.05.78.04 1.2.17 1.48.28.37.14.64.32.92.6.28.28.46.55.6.92.11.28.24.7.28 1.48.04.84.05 1.09.05 3.23s-.01 2.39-.05 3.23c-.04.78-.17 1.2-.28 1.48a2.47 2.47 0 01-.6.92c-.28.28-.55.46-.92.6-.28.11-.7.24-1.48.28-.84.04-1.09.05-3.23.05s-2.39-.01-3.23-.05c-.78-.04-1.2-.17-1.48-.28a2.47 2.47 0 01-.92-.6 2.47 2.47 0 01-.6-.92c-.11-.28-.24-.7-.28-1.48C1.45 10.39 1.44 10.14 1.44 8s.01-2.39.05-3.23c.04-.78.17-1.2.28-1.48.14-.37.32-.64.6-.92.28-.28.55-.46.92-.6.28-.11.7-.24 1.48-.28.84-.04 1.09-.05 3.23-.05zM8 3.89a4.11 4.11 0 100 8.22 4.11 4.11 0 000-8.22zm0 6.78a2.67 2.67 0 110-5.34 2.67 2.67 0 010 5.34zm5.23-6.94a.96.96 0 11-1.92 0 .96.96 0 011.92 0z"/></svg>
