@@ -153,7 +153,34 @@
     height: 580px;
     display: flex; align-items: center; justify-content: center;
   }
-  @media (max-width: 1060px) { .hero__mockups { display: none; } }
+  /* Tablet: empilha conteúdo acima dos cards, escala o stack */
+  @media (max-width: 1060px) {
+    .hero__inner {
+      flex-direction: column;
+      align-items: flex-start;
+      padding-bottom: 56px;
+    }
+    .hero__content { padding: 100px 0 28px; max-width: 100%; }
+    .hero__mockups {
+      display: flex;
+      flex: none;
+      width: 100%;
+      height: 320px;
+      justify-content: center;
+      align-items: flex-start;
+      overflow: hidden;
+    }
+    .mock-stack {
+      transform: scale(0.58);
+      transform-origin: top center;
+    }
+  }
+  /* Mobile pequeno: escala um pouco mais e esconde card traseiro */
+  @media (max-width: 640px) {
+    .hero__mockups { height: 270px; }
+    .mock-stack    { transform: scale(0.5); }
+    .mock-card[data-pos="back"] { opacity: 0 !important; pointer-events: none; }
+  }
 
   .mock-stack { position: relative; width: 540px; height: 520px; }
 
