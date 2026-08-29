@@ -166,7 +166,12 @@
     height: 580px;
     display: flex; align-items: center; justify-content: center;
   }
-  /* Tablet: empilha conteúdo acima dos cards, escala o stack */
+  /* ── Hero mockups: responsivo com centralização matemática ──
+     margin-left: calc((100% - 540px) / 2) centraliza o stack de 540px
+     qualquer que seja a largura real do container.
+     transform-origin: top center garante que o scale acontece
+     a partir do centro horizontal já alinhado.
+  ── */
   @media (max-width: 1060px) {
     .hero__inner {
       flex-direction: column;
@@ -178,21 +183,30 @@
       display: flex;
       flex: none;
       width: 100%;
-      height: 320px;
-      justify-content: center;
+      height: 400px;
       align-items: flex-start;
       overflow: hidden;
     }
     .mock-stack {
-      transform: scale(0.58);
+      flex-shrink: 0;
+      margin-left: calc((100% - 540px) / 2);
+      transform: scale(0.72);
       transform-origin: top center;
     }
   }
-  /* Mobile pequeno: escala um pouco mais e esconde card traseiro */
+
+  /* Mobile (≤ 640px) */
   @media (max-width: 640px) {
-    .hero__mockups { height: 270px; }
-    .mock-stack    { transform: scale(0.5); }
+    .hero__mockups { height: 320px; }
+    .mock-stack    { transform: scale(0.60); }
+    /* card traseiro escondido — evita overflow nas bordas */
     .mock-card[data-pos="back"] { opacity: 0 !important; pointer-events: none; }
+  }
+
+  /* Mobile muito pequeno (≤ 380px) */
+  @media (max-width: 380px) {
+    .hero__mockups { height: 295px; }
+    .mock-stack    { transform: scale(0.55); }
   }
 
   .mock-stack { position: relative; width: 540px; height: 520px; }
