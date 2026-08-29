@@ -1,0 +1,6 @@
+docs/
+*.pdf
+.DS_Store
+Thumbs.db
+node_modules/
+.env
