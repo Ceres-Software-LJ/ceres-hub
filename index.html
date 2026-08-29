@@ -185,7 +185,7 @@
       width: 100%;
       height: 400px;
       align-items: flex-start;
-      overflow: hidden;
+      overflow: visible;
     }
     .mock-stack {
       flex-shrink: 0;
@@ -197,15 +197,14 @@
 
   /* Mobile (≤ 640px) */
   @media (max-width: 640px) {
-    .hero__mockups { height: 320px; }
+    .hero__mockups { height: 320px; overflow: visible; }
     .mock-stack    { transform: scale(0.60); }
-    /* card traseiro escondido — evita overflow nas bordas */
     .mock-card[data-pos="back"] { opacity: 0 !important; pointer-events: none; }
   }
 
   /* Mobile muito pequeno (≤ 380px) */
   @media (max-width: 380px) {
-    .hero__mockups { height: 295px; }
+    .hero__mockups { height: 295px; overflow: visible; }
     .mock-stack    { transform: scale(0.55); }
   }
 
@@ -1417,7 +1416,7 @@
     <a href="https://wa.me/5567992473726" target="_blank" rel="noopener" class="btn nav__cta nav__cta-desktop">
       Falar no WhatsApp
     </a>
-    <button class="nav__hamburger" aria-label="Abrir menu" aria-expanded="false" onclick="var m=document.querySelector('.nav__links'),o=m.classList.toggle('open');this.setAttribute('aria-expanded',o)"
+    <button class="nav__hamburger" aria-label="Abrir menu" aria-expanded="false" onclick="var m=document.querySelector('.nav__links'),o=m.classList.toggle('open');this.setAttribute('aria-expanded',o)">
       <span></span><span></span><span></span>
     </button>
   </div>
