@@ -122,10 +122,10 @@
     transition: transform .35s cubic-bezier(.25,1,.5,1), opacity .25s ease, width .3s ease;
     display: block;
   }
-  /* Transforma em X quando aberto */
-  .nav__hamburger[aria-expanded="true"] span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
-  .nav__hamburger[aria-expanded="true"] span:nth-child(2) { opacity: 0; transform: scaleX(0); }
-  .nav__hamburger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+  /* Merge: as 3 listras deslizam para o centro e viram uma só */
+  .nav__hamburger[aria-expanded="true"] span:nth-child(1) { transform: translateY(8px); }
+  .nav__hamburger[aria-expanded="true"] span:nth-child(2) { /* permanece no centro — é a linha resultante */ }
+  .nav__hamburger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-8px); }
 
   /* ══════════════════════════════════════
      HERO
