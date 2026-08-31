@@ -1,0 +1,94 @@
+---
+import '../styles/main.css';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import WhatsAppFab from '../components/WhatsAppFab.astro';
+
+interface Props {
+  /** Vai para <title>, og:title e twitter:title. */
+  title: string;
+  /** Vai para meta description e, se os campos abaixo forem omitidos, para OG/Twitter. */
+  description: string;
+  /** Descricoes proprias de rede social, quando a da busca nao servir. */
+  ogDescription?: string;
+  twitterDescription?: string;
+  ogType?: 'website' | 'article';
+  /** Caminho a partir da raiz, ex.: /assets/images/brand/logo.png */
+  image?: string;
+  imageAlt?: string;
+  /** Paginas utilitarias (obrigado, erro) saem do indice. */
+  noindex?: boolean;
+}
+
+const {
+  title,
+  description,
+  ogDescription = description,
+  twitterDescription = description,
+  ogType = 'website',
+  image = '/assets/images/brand/logo.png',
+  imageAlt = 'Logotipo da Céres Hub Soluções Digitais',
+  noindex = false,
+} = Astro.props;
+
+const canonical = new URL(Astro.url.pathname, Astro.site).href;
+const imageUrl = new URL(image, Astro.site).href;
+---
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content={description}>
+  <meta name="robots" content={noindex ? 'noindex, follow' : 'index, follow'}>
+  <meta name="theme-color" content="#16283D">
+  <meta property="og:title" content={title}>
+  <meta property="og:description" content={ogDescription}>
+  <meta property="og:type" content={ogType}>
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:url" content={canonical}>
+  <meta property="og:image" content={imageUrl}>
+  <meta property="og:image:alt" content={imageAlt}>
+  <meta property="og:site_name" content="Céres Hub">
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content={title}>
+  <meta name="twitter:description" content={twitterDescription}>
+  <meta name="twitter:image" content={imageUrl}>
+
+  <!-- Geolocalização (SEO local) -->
+  <meta name="geo.region" content="BR-MS">
+  <meta name="geo.placename" content="Campo Grande">
+  <meta name="geo.position" content="-20.4697;-54.6201">
+  <meta name="ICBM" content="-20.4697, -54.6201">
+  <meta name="author" content="Céres Hub Soluções Digitais">
+
+  <!-- Favicon (abas do navegador e resultados do Google) -->
+  <link rel="icon" href="/favicon.png" sizes="192x192" type="image/png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180">
+  <link rel="canonical" href={canonical}>
+  <title>{title}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap">
+
+  <slot name="head" />
+</head>
+<body>
+
+<Nav />
+
+<slot />
+
+<Footer />
+
+<WhatsAppFab />
+
+<script>
+  import '../scripts/ui.js';
+</script>
+
+</body>
+</html>

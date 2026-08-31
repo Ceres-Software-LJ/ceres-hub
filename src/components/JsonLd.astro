@@ -1,0 +1,20 @@
+---
+// Renderiza um @graph de JSON-LD. Os nos vivem como JSON de verdade em
+// src/data/, para continuarem legiveis e diffaveis fora do markup.
+interface Props {
+  nodes: unknown[];
+}
+
+const { nodes } = Astro.props;
+
+const graph = {
+  '@context': 'https://schema.org',
+  '@graph': nodes,
+};
+---
+
+<script
+  type="application/ld+json"
+  is:inline
+  set:html={JSON.stringify(graph)}
+/>

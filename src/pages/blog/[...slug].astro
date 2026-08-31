@@ -1,0 +1,75 @@
+---
+import { getCollection, render } from 'astro:content';
+import type { GetStaticPaths } from 'astro';
+import Base from '../../layouts/Base.astro';
+import JsonLd from '../../components/JsonLd.astro';
+import PageHero from '../../components/PageHero.astro';
+import { breadcrumb, blogPosting } from '../../lib/schema.js';
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  const posts = await getCollection('blog');
+  return posts.map((post) => ({ params: { slug: post.id }, props: { post } }));
+};
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+const { title, seoTitle, description, category, publishedAt, updatedAt } = post.data;
+
+const path = `/blog/${post.id}/`;
+const schema = [
+  blogPosting({ path, title, description, publishedAt, updatedAt }),
+  breadcrumb([
+    { label: 'Blog', href: '/blog/' },
+    { label: title, href: path },
+  ]),
+];
+
+const fmt = (d: Date) =>
+  d.toLocaleDateString('pt-BR', { day: '2-digit', month: 'long', year: 'numeric', timeZone: 'UTC' });
+const foiAtualizado = updatedAt && updatedAt.valueOf() !== publishedAt.valueOf();
+---
+
+<Base title={`${seoTitle ?? title} | Céres Hub`} description={description} ogType="article">
+  <JsonLd slot="head" nodes={schema} />
+
+  <PageHero
+    eyebrow={category}
+    title={title}
+    crumbs={[
+      { label: 'Blog', href: '/blog/' },
+      { label: title, href: path },
+    ]}
+  >
+    <p class="article-meta">
+      <time datetime={publishedAt.toISOString().slice(0, 10)}>{fmt(publishedAt)}</time>
+      {foiAtualizado && (
+        <>
+          <span class="article-meta__dot" aria-hidden="true"></span>
+          <span>atualizado em <time datetime={updatedAt!.toISOString().slice(0, 10)}>{fmt(updatedAt!)}</time></span>
+        </>
+      )}
+    </p>
+  </PageHero>
+
+  <main id="conteudo-principal">
+    <section class="section">
+      <div class="container">
+        <div class="prose">
+          <Content />
+
+          <hr>
+
+          <p>
+            <strong>Quer conversar sobre o seu caso?</strong> A Céres Hub cria sites em Campo Grande, MS,
+            a partir de R$ 800, com entrega em 30 dias — e atende remotamente o resto do Brasil.
+            <a href="/contato/">Fale com a gente</a>.
+          </p>
+        </div>
+
+        <p style="margin-top:32px;">
+          <a class="insight-read" href="/blog/">← Voltar para o blog</a>
+        </p>
+      </div>
+    </section>
+  </main>
+</Base>

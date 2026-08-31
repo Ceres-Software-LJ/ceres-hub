@@ -1,0 +1,679 @@
+---
+import Base from '../layouts/Base.astro';
+import JsonLd from '../components/JsonLd.astro';
+import TeamCards from '../components/TeamCards.astro';
+import organization from '../data/organization.json';
+import website from '../data/website.json';
+import faq from '../data/faq.json';
+---
+
+<Base
+  title="Criação de Sites em Campo Grande, MS | Céres Hub"
+  description="Agência digital em Campo Grande, MS. Sites a partir de R$ 800 com entrega em 30 dias: rápidos e feitos para converter. Domínio, SEO local e suporte."
+  ogDescription="Sites a partir de R$ 800, entregues em 30 dias. Agência digital em Campo Grande, MS: domínio, SEO local e suporte, do primeiro contato ao lançamento."
+  twitterDescription="Sites a partir de R$ 800 com entrega em 30 dias. Agência digital em Campo Grande, MS."
+>
+  <JsonLd slot="head" nodes={[organization, website, faq]} />
+
+<main id="conteudo-principal">
+
+<!-- ══ HERO ══ -->
+<section class="hero" id="home">
+  <div class="hero__grid-lines" aria-hidden="true"></div>
+  <div class="hero__inner">
+    <div class="hero__content">
+      <div class="hero__eyebrow">
+        <span class="hero__eyebrow-dot"></span>
+        <span>Agência Digital · Mato Grosso do Sul</span>
+      </div>
+      <h1 class="hero__title">
+        Criação de sites em Campo Grande<br>
+        para conectar sua empresa ao <em>futuro digital.</em>
+      </h1>
+      <p class="hero__sub">
+        Agência digital em Campo Grande, MS. Criamos sites modernos, responsivos e de alta performance que convertem visitantes em clientes, com gestão de domínios e estratégia digital de ponta a ponta.
+      </p>
+      <div class="hero__actions">
+        <a href="/#portfolio" class="btn btn--primary">
+          Ver Portfólio
+          <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 9h12M10 4l5 5-5 5"/></svg>
+        </a>
+        <a href="https://wa.me/5567992473726" target="_blank" rel="noopener" class="btn btn--ghost">
+          <svg viewBox="0 0 18 18" fill="currentColor"><path d="M9 0C4.03 0 0 4.03 0 9c0 1.59.42 3.07 1.14 4.36L0 18l4.76-1.12C6.01 17.6 7.47 18 9 18c4.97 0 9-4.03 9-9s-4.03-9-9-9zm4.64 12.36c-.19.54-.97 1.03-1.59 1.17-.42.09-.97.16-2.82-.61-2.36-.96-3.88-3.35-4-3.5-.11-.15-.94-1.26-.94-2.4 0-1.14.59-1.7.8-1.93.21-.23.46-.29.61-.29.15 0 .31.001.44.007.15.007.36-.056.56.43.21.5.7 1.74.76 1.87.06.13.1.28.02.45-.08.17-.12.28-.24.43-.12.15-.26.33-.37.44-.12.12-.24.25-.1.49.14.24.61.99 1.3 1.6.9.79 1.65 1.04 1.89 1.16.24.12.38.1.52-.06.14-.16.6-.7.76-.94.16-.24.31-.2.52-.12.21.08 1.31.62 1.54.73.23.11.39.17.45.27.05.1.05.59-.14 1.13z"/></svg>
+          Iniciar Projeto
+        </a>
+      </div>
+      <div class="hero__stats">
+        <div>
+          <div class="hero__stat-num">20<span>+</span></div>
+          <div class="hero__stat-label">Projetos entregues</div>
+        </div>
+        <div>
+          <div class="hero__stat-num">100<span>%</span></div>
+          <div class="hero__stat-label">Clientes satisfeitos</div>
+        </div>
+        <div>
+          <div class="hero__stat-num">48<span>h</span></div>
+          <div class="hero__stat-label">Tempo médio de resposta</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── MOCKUP STACK ── -->
+    <div class="hero__mockups" aria-hidden="true">
+      <div class="mock-stack">
+
+        <!-- CARD 1: Clínica — layout hero + avatar + stats + cards -->
+        <div class="mock-card" data-pos="front" data-niche="clinica">
+          <div class="mock-chrome">
+            <div class="mock-dots"><span></span><span></span><span></span></div>
+            <div class="mock-url"><span class="mock-url-dot"></span><span>clinicavitta.com.br</span></div>
+            <span class="mock-badge" style="background:rgba(91,160,219,0.13);color:#285C99;">
+              <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 1v12M1 7h12"/></svg>Clínica
+            </span>
+          </div>
+          <div class="mock-pane">
+            <!-- nav -->
+            <div class="wire-nav">
+              <div class="wire-logo"></div>
+              <div class="wire-nav-links"><span></span><span></span><span></span></div>
+              <div class="wire-nav-btn"></div>
+            </div>
+            <!-- hero two-col -->
+            <div class="wire-body">
+              <div class="wire-left">
+                <div class="wire-tag"></div>
+                <div class="wire-h w80"></div>
+                <div class="wire-h w60"></div>
+                <div class="wire-p w90"></div>
+                <div class="wire-p w70"></div>
+                <div style="display:flex;gap:8px;margin-top:4px;">
+                  <div class="wire-btn"></div>
+                  <div class="wire-btn" style="background:#e4eaf5;opacity:0.6;width:60px"></div>
+                </div>
+                <!-- trust badges -->
+                <div style="display:flex;gap:6px;margin-top:8px;align-items:center;">
+                  <div style="width:48px;height:7px;border-radius:4px;background:#f0d060;opacity:0.55"></div>
+                  <div class="wire-p w50" style="width:70px;margin:0"></div>
+                </div>
+              </div>
+              <div class="wire-img" style="flex:0 0 110px;width:110px;height:110px;border-radius:50%;background:linear-gradient(160deg,#cdd9ef 0%,#b0c4e0 100%)">
+                <svg width="80" height="100" viewBox="0 0 80 100"><ellipse cx="40" cy="32" rx="20" ry="20" fill="#285C99"/><path d="M4 100c0-19.8 16.1-36 36-36s36 16.2 36 36" fill="#3A80C3"/></svg>
+              </div>
+            </div>
+            <!-- stats row -->
+            <div style="display:flex;gap:0;border-top:1px solid #edf0f5;border-bottom:1px solid #edf0f5;margin:0 -16px;padding:10px 16px;margin-bottom:12px;">
+              <div style="flex:1;display:flex;flex-direction:column;gap:5px;border-right:1px solid #edf0f5;padding-right:12px;">
+                <div style="height:14px;width:40px;border-radius:4px;background:#285C99;opacity:0.25;animation:wireIn .5s .8s ease-out both,floatY 4s .8s ease-in-out infinite;--fy:-4px"></div>
+                <div class="wire-p w90" style="width:50px"></div>
+              </div>
+              <div style="flex:1;display:flex;flex-direction:column;gap:5px;border-right:1px solid #edf0f5;padding:0 12px;">
+                <div style="height:14px;width:40px;border-radius:4px;background:#3A80C3;opacity:0.25;animation:wireIn .5s .95s ease-out both,floatY 4.5s 1.2s ease-in-out infinite;--fy:-4px"></div>
+                <div class="wire-p" style="width:55px"></div>
+              </div>
+              <div style="flex:1;display:flex;flex-direction:column;gap:5px;padding-left:12px;">
+                <div style="height:14px;width:40px;border-radius:4px;background:#5BA0DB;opacity:0.25;animation:wireIn .5s 1.1s ease-out both,floatY 5s 1.6s ease-in-out infinite;--fy:-4px"></div>
+                <div class="wire-p" style="width:48px"></div>
+              </div>
+            </div>
+            <!-- 3 benefit cards -->
+            <div class="wire-cards">
+              <div class="wire-mini-card"><div class="wire-mini-card-dot"></div><span></span><span></span><span></span></div>
+              <div class="wire-mini-card"><div class="wire-mini-card-dot"></div><span></span><span></span><span></span></div>
+              <div class="wire-mini-card"><div class="wire-mini-card-dot"></div><span></span><span></span><span></span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 2: Advocacia — editorial/centered + service list -->
+        <div class="mock-card" data-pos="mid" data-niche="advocacia">
+          <div class="mock-chrome">
+            <div class="mock-dots"><span></span><span></span><span></span></div>
+            <div class="mock-url"><span class="mock-url-dot"></span><span>drcosta-advocacia.com.br</span></div>
+            <span class="mock-badge" style="background:rgba(40,92,153,0.10);color:#1a2f4a;">
+              <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="10" height="8" rx="1"/><path d="M5 4V3a2 2 0 014 0v1"/></svg>Advocacia
+            </span>
+          </div>
+          <div class="mock-pane" style="background:#fafbfd;">
+            <!-- dark nav -->
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;background:#1a2f4a;margin:-16px -16px 14px;padding:12px 16px;border-radius:0;animation:wireIn .5s .15s ease-out both">
+              <div style="width:70px;height:10px;border-radius:4px;background:rgba(255,255,255,0.3)"></div>
+              <div style="display:flex;gap:10px;">
+                <span style="width:32px;height:8px;border-radius:3px;background:rgba(255,255,255,0.2);display:block"></span>
+                <span style="width:32px;height:8px;border-radius:3px;background:rgba(255,255,255,0.2);display:block"></span>
+              </div>
+              <div style="width:58px;height:22px;border-radius:11px;border:1px solid rgba(255,255,255,0.35)"></div>
+            </div>
+            <!-- centered hero -->
+            <div class="wire-center">
+              <div class="wire-tag" style="background:#285C99;opacity:0.3;align-self:center"></div>
+              <div class="wire-h w80" style="align-self:center;width:75%"></div>
+              <div class="wire-h w60" style="align-self:center;width:55%"></div>
+              <div class="wire-p w90" style="align-self:center;width:80%"></div>
+              <div class="wire-p w70" style="align-self:center;width:60%"></div>
+              <div class="wire-btn" style="background:#285C99;align-self:center;width:100px"></div>
+            </div>
+            <!-- service list -->
+            <div class="wire-service-list">
+              <div class="wire-service-row">
+                <div class="wire-svc-dot"></div>
+                <div class="wire-svc-lines"><span></span><span></span></div>
+                <div class="wire-svc-arrow"></div>
+              </div>
+              <div class="wire-service-row">
+                <div class="wire-svc-dot"></div>
+                <div class="wire-svc-lines"><span></span><span></span></div>
+                <div class="wire-svc-arrow"></div>
+              </div>
+              <div class="wire-service-row">
+                <div class="wire-svc-dot"></div>
+                <div class="wire-svc-lines"><span></span><span></span></div>
+                <div class="wire-svc-arrow"></div>
+              </div>
+              <div class="wire-service-row" style="border-bottom:none">
+                <div class="wire-svc-dot"></div>
+                <div class="wire-svc-lines"><span></span><span></span></div>
+                <div class="wire-svc-arrow"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 3: Arquitetura — minimal + portfolio grid -->
+        <div class="mock-card" data-pos="back" data-niche="arquitetura">
+          <div class="mock-chrome">
+            <div class="mock-dots"><span></span><span></span><span></span></div>
+            <div class="mock-url"><span class="mock-url-dot"></span><span>studioarq.com.br</span></div>
+            <span class="mock-badge" style="background:rgba(91,160,219,0.12);color:#285C99;">
+              <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 12L7 2l5 10"/><path d="M4 8h6"/></svg>Arquitetura
+            </span>
+          </div>
+          <div class="mock-pane" style="background:#f8fafd;">
+            <!-- minimal nav -->
+            <div class="wire-nav" style="margin-bottom:14px;">
+              <div class="wire-logo" style="background:#5BA0DB;width:90px"></div>
+              <div style="width:22px;height:14px;display:flex;flex-direction:column;justify-content:space-between;">
+                <span style="height:2px;background:#c5cedf;border-radius:2px;display:block"></span>
+                <span style="height:2px;background:#c5cedf;border-radius:2px;display:block;width:70%"></span>
+                <span style="height:2px;background:#c5cedf;border-radius:2px;display:block"></span>
+              </div>
+            </div>
+            <!-- large tagline -->
+            <div class="wire-arch-top">
+              <div class="wire-arch-heading">
+                <div class="wire-arch-h wa"></div>
+                <div class="wire-arch-h wb"></div>
+              </div>
+              <div class="wire-arch-note">
+                <span></span><span></span>
+                <div style="width:44px;height:16px;border-radius:8px;background:#5BA0DB;opacity:0.35;margin-top:4px"></div>
+              </div>
+            </div>
+            <!-- portfolio 2x2 grid -->
+            <div class="wire-grid">
+              <div class="wire-grid-cell"></div>
+              <div class="wire-grid-cell"></div>
+              <div class="wire-grid-cell"></div>
+              <div class="wire-grid-cell"></div>
+            </div>
+            <!-- footer strip -->
+            <div class="wire-arch-footer">
+              <div class="wire-arch-text"><span></span><span></span></div>
+              <div class="wire-arch-cta"></div>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- .mock-stack -->
+    </div><!-- .hero__mockups -->
+
+  </div><!-- .hero__inner -->
+</section>
+
+<!-- ══ PORTFOLIO ══ -->
+<section class="section portfolio" id="portfolio">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow">Portfólio</span>
+      <h2 class="section-title">Sites que construímos</h2>
+      <p class="section-sub">Cada projeto é pensado para o nicho do cliente: desde agronegócio até clínicas de saúde e restaurantes.</p>
+    </div>
+    <div class="portfolio-grid">
+
+      <!-- Project 1: FlowBloc -->
+      <article class="project-card">
+        <div class="browser-mock">
+          <div class="browser-bar">
+            <div class="browser-dots"><span></span><span></span><span></span></div>
+            <div class="browser-url">flowbloc.com.br</div>
+          </div>
+          <div class="browser-screen" style="background:#0d1117">
+            <img class="browser-screen-img" src="/assets/images/portfolio/flowbloc.png" alt="FlowBloc" loading="lazy">
+            <div class="browser-screen-scrim"></div>
+          </div>
+        </div>
+        <div class="project-card__body">
+          <div class="project-card__tags">
+            <span class="tag">Produtividade</span>
+            <span class="tag">SaaS</span>
+          </div>
+          <h3 class="project-card__name">FlowBloc</h3>
+          <p class="project-card__desc">Plataforma de organização e execução de tarefas. "Organize. Execute. Avance." Gestão de fluxo de trabalho em blocos.</p>
+          <a href="https://flowbloc.com.br" target="_blank" rel="noopener" class="project-card__link">
+            Visitar Site
+            <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M2 7h10M7 2l5 5-5 5"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <!-- Project 2: FinBloc -->
+      <article class="project-card">
+        <div class="browser-mock">
+          <div class="browser-bar">
+            <div class="browser-dots"><span></span><span></span><span></span></div>
+            <div class="browser-url">finbloc.com.br</div>
+          </div>
+          <div class="browser-screen" style="background:#050e1f">
+            <img class="browser-screen-img" src="/assets/images/portfolio/finbloc.png" alt="FinBloc" loading="lazy">
+            <div class="browser-screen-scrim"></div>
+          </div>
+        </div>
+        <div class="project-card__body">
+          <div class="project-card__tags">
+            <span class="tag">Fintech</span>
+            <span class="tag">IA</span>
+          </div>
+          <h3 class="project-card__name">FinBloc</h3>
+          <p class="project-card__desc">Plataforma de gestão financeira inteligente com relatórios gerados por IA, dashboards intuitivos e sincronização multi-dispositivo.</p>
+          <a href="https://finbloc.com.br" target="_blank" rel="noopener" class="project-card__link">
+            Visitar Site
+            <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M2 7h10M7 2l5 5-5 5"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <!-- Project 3: Kura Lab -->
+      <article class="project-card">
+        <div class="browser-mock">
+          <div class="browser-bar">
+            <div class="browser-dots"><span></span><span></span><span></span></div>
+            <div class="browser-url">kuralab.com.br</div>
+          </div>
+          <div class="browser-screen" style="background:#0a0f1a">
+            <img class="browser-screen-img" src="/assets/images/portfolio/kuralabs.png" alt="Kura Lab" loading="lazy">
+            <div class="browser-screen-scrim"></div>
+          </div>
+        </div>
+        <div class="project-card__body">
+          <div class="project-card__tags">
+            <span class="tag">Marketplace</span>
+            <span class="tag">Brechó</span>
+          </div>
+          <h3 class="project-card__name">Kura Lab</h3>
+          <p class="project-card__desc">“Brechó perto de você, com peças que ninguém mais tem.” Marketplace que reúne lojas de brechó e roupa em uma só busca: garimpe por região, descubra acervos novos e compre direto da loja.</p>
+          <a href="https://kuralab.com.br/" target="_blank" rel="noopener" class="project-card__link">
+            Visitar Site
+            <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M2 7h10M7 2l5 5-5 5"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <!-- Project 4: Tribet Cash Poker -->
+      <article class="project-card">
+        <div class="browser-mock">
+          <div class="browser-bar">
+            <div class="browser-dots"><span></span><span></span><span></span></div>
+            <div class="browser-url">tribet-cash-poker.vercel.app</div>
+          </div>
+          <div class="browser-screen" style="background:#030d03">
+            <img class="browser-screen-img" src="/assets/images/portfolio/tribet.png" alt="Tribet Cash Poker" loading="lazy">
+            <div class="browser-screen-scrim"></div>
+          </div>
+        </div>
+        <div class="project-card__body">
+          <div class="project-card__tags">
+            <span class="tag">Entretenimento</span>
+            <span class="tag">Landing Page</span>
+          </div>
+          <h3 class="project-card__name">Tribet Cash Poker</h3>
+          <p class="project-card__desc">Site para sala de poker cash game em Campo Grande. "Mesa rodando agora." Ambiente discreto, dealer profissional e múltiplos níveis de apostas.</p>
+          <a href="https://tribet-cash-poker.vercel.app/" target="_blank" rel="noopener" class="project-card__link">
+            Visitar Site
+            <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M2 7h10M7 2l5 5-5 5"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <!-- Project 5: MP Engenharia -->
+      <article class="project-card">
+        <div class="browser-mock">
+          <div class="browser-bar">
+            <div class="browser-dots"><span></span><span></span><span></span></div>
+            <div class="browser-url">mp-engenharia.vercel.app</div>
+          </div>
+          <div class="browser-screen" style="background:#110e08">
+            <img class="browser-screen-img" src="/assets/images/portfolio/mp-engenharia.png" alt="MP Engenharia" loading="lazy">
+            <div class="browser-screen-scrim"></div>
+          </div>
+        </div>
+        <div class="project-card__body">
+          <div class="project-card__tags">
+            <span class="tag">Engenharia Civil</span>
+            <span class="tag">Institucional</span>
+          </div>
+          <h3 class="project-card__name">MP Engenharia</h3>
+          <p class="project-card__desc">"O engenheiro que assina seu projeto é o mesmo que aparece na sua obra." Site para escritório de engenharia e arquitetura em Campo Grande, MS.</p>
+          <a href="https://mp-engenharia.vercel.app/" target="_blank" rel="noopener" class="project-card__link">
+            Visitar Site
+            <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M2 7h10M7 2l5 5-5 5"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <!-- Project 6: Axa Foto -->
+      <article class="project-card">
+        <div class="browser-mock">
+          <div class="browser-bar">
+            <div class="browser-dots"><span></span><span></span><span></span></div>
+            <div class="browser-url">axa-foto.vercel.app</div>
+          </div>
+          <div class="browser-screen" style="background:#0a0806">
+            <img class="browser-screen-img" src="/assets/images/portfolio/axa-foto.png" alt="Axa Foto" loading="lazy">
+            <div class="browser-screen-scrim"></div>
+          </div>
+        </div>
+        <div class="project-card__body">
+          <div class="project-card__tags">
+            <span class="tag">Fotografia</span>
+            <span class="tag">Serviços</span>
+          </div>
+          <h3 class="project-card__name">Axa Foto Autorizada</h3>
+          <p class="project-card__desc">"Nas mãos de quem entende de fotografia." Assistência técnica autorizada para câmeras digitais e analógicas, com atuação desde 1998 em Campo Grande.</p>
+          <a href="https://axa-foto.vercel.app/" target="_blank" rel="noopener" class="project-card__link">
+            Visitar Site
+            <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M2 7h10M7 2l5 5-5 5"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <!-- Project 7: Viva Espaço de Beleza -->
+      <article class="project-card">
+        <div class="browser-mock">
+          <div class="browser-bar">
+            <div class="browser-dots"><span></span><span></span><span></span></div>
+            <div class="browser-url">viva-espaco-beleza.vercel.app</div>
+          </div>
+          <div class="browser-screen" style="background:#120810">
+            <img class="browser-screen-img" src="/assets/images/portfolio/viva-beleza.png" alt="Viva Espaço de Beleza" loading="lazy">
+            <div class="browser-screen-scrim"></div>
+          </div>
+        </div>
+        <div class="project-card__body">
+          <div class="project-card__tags">
+            <span class="tag">Beleza</span>
+            <span class="tag">Salão</span>
+          </div>
+          <h3 class="project-card__name">Viva Espaço de Beleza</h3>
+          <p class="project-card__desc">"Manicure, cabelo e unhas com o capricho que dura." Salão inclusivo em Campo Grande com 4,7★ no Google: manicure, gel, escova e hidratação capilar.</p>
+          <a href="https://viva-espaco-beleza.vercel.app/" target="_blank" rel="noopener" class="project-card__link">
+            Visitar Site
+            <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M2 7h10M7 2l5 5-5 5"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <!-- Project 8: Amaná Makramiya -->
+      <article class="project-card">
+        <div class="browser-mock">
+          <div class="browser-bar">
+            <div class="browser-dots"><span></span><span></span><span></span></div>
+            <div class="browser-url">amana-macrame.vercel.app</div>
+          </div>
+          <div class="browser-screen" style="background:#0f0c07">
+            <img class="browser-screen-img" src="/assets/images/portfolio/amana.png" alt="Amaná Makramiya" loading="lazy">
+            <div class="browser-screen-scrim"></div>
+          </div>
+        </div>
+        <div class="project-card__body">
+          <div class="project-card__tags">
+            <span class="tag">Artesanato</span>
+            <span class="tag">E-commerce</span>
+          </div>
+          <h3 class="project-card__name">Amaná Makramiya</h3>
+          <p class="project-card__desc">"Feito à mão, para permanecer." Ateliê de macramê com peças decorativas 100% artesanais: painéis, luminárias e espelhos personalizáveis, atendimento nacional.</p>
+          <a href="https://amana-macrame.vercel.app/" target="_blank" rel="noopener" class="project-card__link">
+            Visitar Site
+            <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M2 7h10M7 2l5 5-5 5"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <!-- CTA card -->
+      <article class="project-card" style="background: linear-gradient(140deg, var(--navy) 0%, #1e3655 100%); border-color: rgba(91,160,219,0.2); display:flex; flex-direction:column; justify-content:center; align-items:flex-start; padding:36px 28px; min-height:300px;">
+        <span style="font-size:0.75rem;font-weight:600;font-family:'Space Grotesk','Space Grotesk Fallback',sans-serif;letter-spacing:0.1em;text-transform:uppercase;color:var(--sky);margin-bottom:12px;">Seu projeto aqui</span>
+        <h3 style="font-family:'Space Grotesk','Space Grotesk Fallback',sans-serif;font-size:1.4rem;font-weight:700;letter-spacing:-0.03em;color:#fff;line-height:1.2;margin-bottom:12px;text-wrap:balance;">Tem um projeto em mente?</h3>
+        <p style="font-size:0.875rem;color:rgba(232,240,250,0.6);line-height:1.7;margin-bottom:24px;">Vamos conversar sobre como transformar sua ideia em realidade digital.</p>
+        <a href="https://wa.me/5567992473726" target="_blank" rel="noopener" class="btn btn--primary" style="font-size:0.875rem;padding:11px 22px;">
+          Iniciar Conversa
+          <svg viewBox="0 0 18 18" fill="currentColor" style="width:16px;height:16px"><path d="M9 0C4.03 0 0 4.03 0 9c0 1.59.42 3.07 1.14 4.36L0 18l4.76-1.12C6.01 17.6 7.47 18 9 18c4.97 0 9-4.03 9-9s-4.03-9-9-9zm4.64 12.36c-.19.54-.97 1.03-1.59 1.17-.42.09-.97.16-2.82-.61-2.36-.96-3.88-3.35-4-3.5-.11-.15-.94-1.26-.94-2.4 0-1.14.59-1.7.8-1.93.21-.23.46-.29.61-.29.15 0 .31.001.44.007.15.007.36-.056.56.43.21.5.7 1.74.76 1.87.06.13.1.28.02.45-.08.17-.12.28-.24.43-.12.15-.26.33-.37.44-.12.12-.24.25-.1.49.14.24.61.99 1.3 1.6.9.79 1.65 1.04 1.89 1.16.24.12.38.1.52-.06.14-.16.6-.7.76-.94.16-.24.31-.2.52-.12.21.08 1.31.62 1.54.73.23.11.39.17.45.27.05.1.05.59-.14 1.13z"/></svg>
+        </a>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══ SERVICES ══ -->
+<section class="section services" id="servicos">
+  <div class="container">
+    <div class="section-header section-header--centered">
+      <span class="eyebrow">O que fazemos</span>
+      <h2 class="section-title">Nossos serviços</h2>
+      <p class="section-sub">Da concepção ao lançamento, cuidamos de cada etapa para que você foque no que mais importa: o seu negócio.</p>
+    </div>
+    <div class="services-grid">
+
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+            <rect x="2" y="4" width="22" height="15" rx="2"/>
+            <path d="M9 22h8M13 19v3"/>
+          </svg>
+        </div>
+        <h3 class="service-name">Criação de Websites</h3>
+        <p class="service-desc">Sites institucionais, landing pages e portfólios desenvolvidos com foco em conversão, performance e identidade visual.</p>
+        <ul class="service-list">
+          <li>Design exclusivo e responsivo</li>
+          <li>Otimizado para mobile e velocidade</li>
+          <li>Integração com WhatsApp e redes sociais</li>
+          <li>Painel de edição fácil (quando aplicável)</li>
+        </ul>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+            <circle cx="13" cy="13" r="10"/>
+            <path d="M13 3c0 0-4 4-4 10s4 10 4 10"/>
+            <path d="M3 13h20"/>
+          </svg>
+        </div>
+        <h3 class="service-name">Registro & Gestão de Domínios</h3>
+        <p class="service-desc">Registro, renovação e gerenciamento completo do seu domínio .com.br ou .com, sem complicação.</p>
+        <ul class="service-list">
+          <li>Busca e registro de domínios</li>
+          <li>Configuração de DNS e e-mail profissional</li>
+          <li>Alertas de renovação automáticos</li>
+          <li>Transferência e migração assistida</li>
+        </ul>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+            <path d="M4 14l4-4 4 4 5-6 5 4"/>
+            <path d="M4 20h18"/>
+          </svg>
+        </div>
+        <h3 class="service-name">Otimização & SEO Básico</h3>
+        <p class="service-desc">Fazemos seu site ser encontrado pelo Google com técnicas de SEO on-page e otimização de performance.</p>
+        <ul class="service-list">
+          <li>Configuração de meta tags e estrutura</li>
+          <li>Google Analytics e Search Console</li>
+          <li>Velocidade e Core Web Vitals</li>
+          <li>SEO local (Google Business)</li>
+        </ul>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+            <path d="M13 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/>
+          </svg>
+        </div>
+        <h3 class="service-name">Suporte & Manutenção</h3>
+        <p class="service-desc">Seu site sempre no ar, seguro e atualizado. Monitoramento contínuo e suporte ágil por WhatsApp.</p>
+        <ul class="service-list">
+          <li>Monitoramento 24/7 de disponibilidade</li>
+          <li>Atualizações de conteúdo e plugins</li>
+          <li>Backups automáticos mensais</li>
+          <li>Suporte via WhatsApp em horário comercial</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══ DIFFERENTIALS + PROCESS ══ -->
+<section class="section differentials" id="processo">
+  <div class="container">
+
+    <div class="section-header">
+      <span class="eyebrow">Por que a Céres Hub</span>
+      <h2 class="section-title">Diferenciais que fazem a diferença</h2>
+    </div>
+    <div class="diff-grid">
+      <div class="diff-card">
+        <div class="diff-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+            <path d="M12 2l2 7h7l-5.5 4 2 7L12 16l-5.5 4 2-7L3 9h7z"/>
+          </svg>
+        </div>
+        <h3 class="diff-name">Design Exclusivo</h3>
+        <p class="diff-desc">Nada de templates prontos. Cada site é projetado do zero, com identidade visual alinhada ao posicionamento da sua marca.</p>
+      </div>
+      <div class="diff-card">
+        <div class="diff-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+            <circle cx="12" cy="12" r="9"/>
+            <path d="M12 7v5l4 2"/>
+          </svg>
+        </div>
+        <h3 class="diff-name">Solução Ponta a Ponta</h3>
+        <p class="diff-desc">Cuidamos de domínio, hospedagem, design, desenvolvimento e lançamento. Um único ponto de contato para tudo.</p>
+      </div>
+      <div class="diff-card">
+        <div class="diff-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+          </svg>
+        </div>
+        <h3 class="diff-name">Foco em Performance</h3>
+        <p class="diff-desc">Sites rápidos, leves e otimizados para o Google. Medimos e entregamos resultados, não apenas pixels bonitos.</p>
+      </div>
+    </div>
+
+    <h3 class="process-title">Como trabalhamos</h3>
+    <div class="process-track">
+      <div class="process-step">
+        <div class="process-step__num">01</div>
+        <div class="process-step__name">Briefing</div>
+        <p class="process-step__desc">Entendemos seu negócio, público-alvo, concorrência e objetivos em uma reunião estratégica.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-step__num">02</div>
+        <div class="process-step__name">Planejamento</div>
+        <p class="process-step__desc">Definimos arquitetura, wireframes, paleta de cores e estratégia de conteúdo.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-step__num">03</div>
+        <div class="process-step__name">Desenvolvimento</div>
+        <p class="process-step__desc">Codificamos e refinamos com feedbacks iterativos até você aprovar cada detalhe.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-step__num">04</div>
+        <div class="process-step__name">Entrega & Lançamento</div>
+        <p class="process-step__desc">Publicamos, configuramos domínio, analytics e entregamos o site pronto para converter.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══ QUEM SOMOS ══ -->
+<section class="section about" id="sobre">
+  <div class="container">
+    <div class="section-header section-header--centered">
+      <span class="eyebrow">Nossa Equipe</span>
+      <h2 class="section-title">As pessoas por trás da Céres Hub</h2>
+      <p class="section-sub">Uma dupla focada em resultado: tecnologia de ponta com gestão eficiente para o seu negócio crescer.</p>
+    </div>
+
+    <div class="about__grid">
+
+      <TeamCards />
+
+    </div>
+  </div>
+</section>
+
+<section class="section faq" id="faq">
+  <div class="container">
+    <div class="section-header section-header--centered">
+      <span class="eyebrow">Perguntas Frequentes</span>
+      <h2 class="section-title">Dúvidas sobre criar um site em Campo Grande</h2>
+      <p class="section-sub">As perguntas que mais recebemos de empresas de Campo Grande e região.</p>
+    </div>
+    <div class="faq__list">
+      <details class="faq__item">
+        <summary class="faq__q">Quanto custa criar um site em Campo Grande?<svg class="faq__icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M10 4v12M4 10h12"/></svg></summary>
+        <div class="faq__a"><p><strong>Os sites da Céres Hub começam em R$ 800.</strong> O valor final depende do escopo: número de páginas, integrações necessárias, se inclui o registro do domínio e se haverá manutenção contínua depois do lançamento.</p><p>A Céres Hub monta o orçamento após uma reunião de descoberta, em que entende o negócio, o público-alvo e os objetivos. Fale pelo WhatsApp <strong>(67) 9 9247-3726</strong> para receber uma estimativa do seu caso.</p></div>
+      </details>
+
+      <details class="faq__item">
+        <summary class="faq__q">Quanto tempo leva para o site ficar pronto?<svg class="faq__icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M10 4v12M4 10h12"/></svg></summary>
+        <div class="faq__a"><p><strong>O prazo de entrega é de 30 dias</strong>, contados a partir da reunião de descoberta. Nesse período o projeto passa por quatro etapas:</p><ul><li><strong>Descoberta</strong> — reunião estratégica sobre negócio, público-alvo, concorrência e objetivos.</li><li><strong>Arquitetura e design</strong> — wireframes, paleta de cores e estratégia de conteúdo.</li><li><strong>Desenvolvimento</strong> — codificação e refino com feedbacks iterativos até a aprovação.</li><li><strong>Lançamento</strong> — publicação, configuração de domínio e analytics.</li></ul></div>
+      </details>
+
+      <details class="faq__item">
+        <summary class="faq__q">A Céres Hub registra o domínio para mim?<svg class="faq__icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M10 4v12M4 10h12"/></svg></summary>
+        <div class="faq__a"><p><strong>Sim.</strong> O serviço de Registro &amp; Gestão de Domínios cobre a busca e o registro do domínio, a configuração de DNS e e-mail profissional, alertas automáticos de renovação e a transferência ou migração assistida de domínios que já existem.</p></div>
+      </details>
+
+      <details class="faq__item">
+        <summary class="faq__q">O site vai funcionar bem no celular?<svg class="faq__icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M10 4v12M4 10h12"/></svg></summary>
+        <div class="faq__a"><p><strong>Sim.</strong> Todo site entregue pela Céres Hub é responsivo e otimizado para mobile e velocidade, com acompanhamento dos Core Web Vitals — as métricas que o Google usa para medir a experiência de carregamento e estabilidade visual da página.</p></div>
+      </details>
+
+      <details class="faq__item">
+        <summary class="faq__q">Vocês dão suporte depois que o site entra no ar?<svg class="faq__icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M10 4v12M4 10h12"/></svg></summary>
+        <div class="faq__a"><p><strong>Sim.</strong> O serviço de Suporte &amp; Manutenção inclui monitoramento de disponibilidade, atualizações de conteúdo e plugins, backups automáticos mensais e atendimento via WhatsApp em horário comercial.</p></div>
+      </details>
+
+      <details class="faq__item">
+        <summary class="faq__q">O que é SEO local e a Céres Hub faz esse serviço?<svg class="faq__icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M10 4v12M4 10h12"/></svg></summary>
+        <div class="faq__a"><p><strong>SEO local é o conjunto de otimizações que faz uma empresa aparecer nas buscas de quem procura serviços perto de si</strong> — como “agência digital em Campo Grande” ou “criação de sites em Campo Grande” — e também no mapa do Google.</p><p>A Céres Hub faz esse trabalho: configuração de meta tags e estrutura, Google Analytics e Search Console, ajustes de velocidade e Core Web Vitals e otimização do perfil no Google Business.</p></div>
+      </details>
+
+      <details class="faq__item">
+        <summary class="faq__q">A Céres Hub atende empresas fora de Campo Grande?<svg class="faq__icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M10 4v12M4 10h12"/></svg></summary>
+        <div class="faq__a"><p><strong>Sim.</strong> A Céres Hub é sediada em <strong>Campo Grande, Mato Grosso do Sul</strong>, e atende empresas de outras cidades de MS e do restante do Brasil. Todo o processo — reunião de descoberta, aprovações de design e lançamento — é conduzido por videochamada e WhatsApp, sem necessidade de encontro presencial.</p></div>
+      </details>
+    </div>
+  </div>
+</section>
+
+</main>
+
+</Base>

@@ -1,0 +1,10 @@
+{
+  "@type": "WebSite",
+  "@id": "https://www.cereshub.com.br/#website",
+  "url": "https://www.cereshub.com.br/",
+  "name": "Céres Hub",
+  "inLanguage": "pt-BR",
+  "publisher": {
+    "@id": "https://www.cereshub.com.br/#organizacao"
+  }
+}

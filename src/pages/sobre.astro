@@ -1,0 +1,156 @@
+---
+import Base from '../layouts/Base.astro';
+import JsonLd from '../components/JsonLd.astro';
+import PageHero from '../components/PageHero.astro';
+import TeamCards from '../components/TeamCards.astro';
+import organization from '../data/organization.json';
+import { breadcrumb, webPage, orgRef, ORG_ID, SITE } from '../lib/schema.js';
+
+const title = 'Sobre a Céres Hub | Agência digital em Campo Grande, MS';
+const description =
+  'Quem faz a Céres Hub: uma dupla de Campo Grande, MS, que cria sites do domínio ao lançamento. Conheça a equipe, o processo de 4 etapas e como trabalhamos.';
+
+// Person completos ficam aqui, e nao em organization.json, porque e esta a
+// pagina que fala deles: e o sinal de E-E-A-T que o Google le.
+const people = [
+  {
+    '@type': 'Person',
+    '@id': `${SITE}/sobre/#luis`,
+    name: 'Luis',
+    jobTitle: 'Desenvolvedor & Co-fundador',
+    worksFor: orgRef,
+    image: `${SITE}/assets/images/team/luis.jpg`,
+    knowsAbout: ['HTML & CSS', 'JavaScript', 'UI Design', 'Performance Web', 'SEO Técnico'],
+  },
+  {
+    '@type': 'Person',
+    '@id': `${SITE}/sobre/#joao`,
+    name: 'João',
+    jobTitle: 'Administrador & Co-fundador',
+    worksFor: orgRef,
+    image: `${SITE}/assets/images/team/joao.jpg`,
+    knowsAbout: ['Gestão de Projetos', 'Relacionamento', 'Estratégia Digital', 'Domínios & Hosting'],
+  },
+];
+
+const schema = [
+  { ...organization, '@id': ORG_ID, founder: people.map((p) => ({ '@id': p['@id'] })) },
+  ...people,
+  webPage('AboutPage', { path: '/sobre/', name: title, description }),
+  breadcrumb([{ label: 'Sobre', href: '/sobre/' }]),
+];
+
+const etapas = [
+  {
+    n: '01',
+    nome: 'Descoberta',
+    desc: 'Reunião estratégica sobre o negócio, o público-alvo, a concorrência e os objetivos. É daqui que sai o orçamento — antes disso, qualquer número seria chute.',
+  },
+  {
+    n: '02',
+    nome: 'Arquitetura e design',
+    desc: 'Wireframes, paleta de cores e estratégia de conteúdo. Você aprova a estrutura antes de existir uma linha de código.',
+  },
+  {
+    n: '03',
+    nome: 'Desenvolvimento',
+    desc: 'Codificação e refino com feedbacks iterativos até a aprovação. Sem entrega surpresa no último dia.',
+  },
+  {
+    n: '04',
+    nome: 'Lançamento',
+    desc: 'Publicação, configuração do domínio e analytics. O site entra no ar já medindo o que importa.',
+  },
+];
+---
+
+<Base title={title} description={description}>
+  <JsonLd slot="head" nodes={schema} />
+
+  <PageHero
+    eyebrow="Sobre nós"
+    title="As pessoas por trás da Céres Hub"
+    sub="Uma agência digital de Campo Grande, Mato Grosso do Sul, formada por uma dupla: quem escreve o código e quem cuida do projeto. Sem camada de intermediários entre você e quem faz."
+    crumbs={[{ label: 'Sobre', href: '/sobre/' }]}
+  />
+
+  <main id="conteudo-principal">
+
+    <section class="section">
+      <div class="container">
+        <div class="section-header section-header--centered">
+          <span class="eyebrow">Nossa Equipe</span>
+          <h2 class="section-title">Quem você encontra do outro lado</h2>
+          <p class="section-sub">Na Céres Hub você fala direto com quem executa. Somos dois, e os dois assinam o trabalho.</p>
+        </div>
+
+        <div class="team-grid">
+          <TeamCards />
+        </div>
+      </div>
+    </section>
+
+    <section class="section differentials">
+      <div class="container">
+        <div class="section-header section-header--centered">
+          <span class="eyebrow">Como trabalhamos</span>
+          <h2 class="section-title">Quatro etapas, 30 dias</h2>
+          <p class="section-sub">O prazo de entrega conta a partir da reunião de descoberta — não da assinatura.</p>
+        </div>
+
+        <div class="process-track">
+          {etapas.map((etapa) => (
+            <div class="process-step">
+              <div class="process-step__num">{etapa.n}</div>
+              <h3 class="process-step__name">{etapa.nome}</h3>
+              <p class="process-step__desc">{etapa.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="prose">
+          <h2>Onde atendemos</h2>
+          <p>
+            A Céres Hub é sediada em <strong>Campo Grande, Mato Grosso do Sul</strong>, e é daqui que
+            conhecemos melhor o terreno: o comércio local, o que funciona para quem vende na cidade e o
+            que faz diferença para aparecer nas buscas de quem está perto.
+          </p>
+          <p>
+            Isso não nos prende geograficamente. Atendemos empresas de outras cidades de MS e do restante
+            do Brasil, e todo o processo — reunião de descoberta, aprovações de design e lançamento — é
+            conduzido por videochamada e WhatsApp. Nenhuma etapa exige encontro presencial.
+          </p>
+
+          <h2>O que fazemos, e o que não fazemos</h2>
+          <p>
+            Fazemos sites institucionais, landing pages e portfólios, registramos e administramos domínios,
+            aplicamos SEO técnico e local, e mantemos o site no ar depois do lançamento. Os quatro serviços
+            estão detalhados <a href="/#servicos">na página inicial</a>.
+          </p>
+          <p>
+            Não somos uma agência de tudo. Não fazemos gestão de tráfego pago, produção de conteúdo
+            contínua nem social media. Quando um projeto precisa disso, dizemos na reunião de descoberta —
+            é mais útil que aceitar e entregar mal.
+          </p>
+
+          <h2>Preço e prazo</h2>
+          <p>
+            Os sites começam em <strong>R$ 800</strong> e o prazo de entrega é de <strong>30 dias</strong>.
+            O valor final depende do escopo: número de páginas, integrações, se inclui o registro do domínio
+            e se haverá manutenção contínua depois do lançamento.
+          </p>
+          <p>
+            Publicamos esses números de propósito. Orçamento fechado só sai depois da reunião de descoberta,
+            mas você merece saber a ordem de grandeza antes de gastar seu tempo numa reunião.
+            <a href="/contato/">Fale com a gente</a> para uma estimativa do seu caso.
+          </p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</Base>

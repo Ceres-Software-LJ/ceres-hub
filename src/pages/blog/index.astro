@@ -1,0 +1,83 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import JsonLd from '../../components/JsonLd.astro';
+import PageHero from '../../components/PageHero.astro';
+import { breadcrumb, webPage, orgRef, SITE } from '../../lib/schema.js';
+
+const title = 'Blog | Céres Hub — sites, domínios e SEO em Campo Grande';
+const description =
+  'Respostas diretas sobre criar e manter um site: quanto custa, como registrar domínio, o que perguntar antes de contratar uma agência. Sem enrolação.';
+
+// O card destacado ocupa 2 das 3 colunas: se ele não vier primeiro, não cabe
+// na coluna que sobra da primeira linha e deixa um buraco no grid.
+const posts = (await getCollection('blog')).sort((a, b) => {
+  if (a.data.featured !== b.data.featured) return a.data.featured ? -1 : 1;
+  return b.data.publishedAt.valueOf() - a.data.publishedAt.valueOf();
+});
+
+const schema = [
+  {
+    '@type': 'Blog',
+    '@id': `${SITE}/blog/`,
+    url: `${SITE}/blog/`,
+    name: 'Blog da Céres Hub',
+    description,
+    inLanguage: 'pt-BR',
+    publisher: orgRef,
+    blogPost: posts.map((post) => ({
+      '@type': 'BlogPosting',
+      '@id': `${SITE}/blog/${post.id}/`,
+      headline: post.data.title,
+      datePublished: post.data.publishedAt.toISOString().slice(0, 10),
+    })),
+  },
+  webPage('CollectionPage', { path: '/blog/', name: title, description }),
+  breadcrumb([{ label: 'Blog', href: '/blog/' }]),
+];
+
+const dataLegivel = (d: Date) =>
+  d.toLocaleDateString('pt-BR', { day: '2-digit', month: 'short', year: 'numeric', timeZone: 'UTC' });
+---
+
+<Base title={title} description={description}>
+  <JsonLd slot="head" nodes={schema} />
+
+  <PageHero
+    eyebrow="Blog"
+    title="As perguntas que a gente mais recebe"
+    sub="Textos curtos e diretos sobre criar, registrar e manter um site. Escritos a partir das dúvidas reais de quem nos procura em Campo Grande e fora dela."
+    crumbs={[{ label: 'Blog', href: '/blog/' }]}
+  />
+
+  <main id="conteudo-principal">
+    <section class="section insights">
+      <div class="container">
+        {posts.length === 0 ? (
+          <p class="section-sub">Ainda não há artigos publicados.</p>
+        ) : (
+          <div class="insights-grid">
+            {posts.map((post) => (
+              <article class:list={['insight-card', post.data.featured && 'insight-card--featured']}>
+                <a class="insight-card__link" href={`/blog/${post.id}/`}>
+                  <span class="insight-category">{post.data.category}</span>
+                  <h2 class="insight-title">{post.data.title}</h2>
+                  <p class="insight-excerpt">{post.data.description}</p>
+                  <span class="insight-read">
+                    Ler artigo
+                    <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:14px;height:14px;">
+                      <path d="M4 10h12M11 5l5 5-5 5"/>
+                    </svg>
+                  </span>
+                </a>
+                <time class="prose__updated" datetime={post.data.publishedAt.toISOString().slice(0, 10)}>
+                  {dataLegivel(post.data.publishedAt)}
+                </time>
+              </article>
+            ))}
+          </div>
+        )}
+      </div>
+    </section>
+  </main>
+</Base>

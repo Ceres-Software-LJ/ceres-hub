@@ -1,0 +1,44 @@
+---
+// Faixa de abertura das paginas internas. A .nav e fixed sobre fundo escuro,
+// entao a pagina precisa comecar escura para o menu continuar legivel.
+interface Crumb {
+  label: string;
+  href: string;
+}
+
+interface Props {
+  title: string;
+  eyebrow?: string;
+  sub?: string;
+  crumbs?: Crumb[];
+}
+
+const { title, eyebrow, sub, crumbs = [] } = Astro.props;
+---
+
+<header class="page-hero">
+  <div class="container">
+    {crumbs.length > 0 && (
+      <nav class="breadcrumb" aria-label="Trilha de navegação">
+        <ol>
+          <li><a href="/">Início</a></li>
+          {crumbs.map((crumb, i) => (
+            <li>
+              {i === crumbs.length - 1
+                ? <span aria-current="page">{crumb.label}</span>
+                : <a href={crumb.href}>{crumb.label}</a>}
+            </li>
+          ))}
+        </ol>
+      </nav>
+    )}
+
+    <div class="page-hero__inner">
+      {eyebrow && <span class="eyebrow">{eyebrow}</span>}
+      <h1 class="page-hero__title">{title}</h1>
+      {sub && <p class="page-hero__sub">{sub}</p>}
+    </div>
+
+    <slot />
+  </div>
+</header>

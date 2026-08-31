@@ -56,4 +56,4 @@ User-agent: meta-externalagent
 Allow: /
 
 # ── Sitemap ──
-Sitemap: https://www.cereshub.com.br/sitemap.xml
+Sitemap: https://www.cereshub.com.br/sitemap-index.xml

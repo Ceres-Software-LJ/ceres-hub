@@ -1,0 +1,175 @@
+{
+  "@type": [
+    "ProfessionalService",
+    "LocalBusiness"
+  ],
+  "@id": "https://www.cereshub.com.br/#organizacao",
+  "name": "Céres Hub Soluções Digitais",
+  "alternateName": [
+    "Céres Hub",
+    "Ceres Hub"
+  ],
+  "url": "https://www.cereshub.com.br/",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://www.cereshub.com.br/assets/images/brand/logo.png"
+  },
+  "image": "https://www.cereshub.com.br/assets/images/brand/logo.png",
+  "description": "Agência digital em Campo Grande, MS. Criação de sites responsivos e de alta performance a partir de R$ 800, com entrega em 30 dias, registro e gestão de domínios, SEO local e suporte contínuo.",
+  "email": "ceres.cto@gmail.com",
+  "telephone": "+5567992473726",
+  "priceRange": "A partir de R$ 800",
+  "currenciesAccepted": "BRL",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Campo Grande",
+    "addressRegion": "MS",
+    "addressCountry": "BR"
+  },
+  "areaServed": [
+    {
+      "@type": "City",
+      "name": "Campo Grande"
+    },
+    {
+      "@type": "State",
+      "name": "Mato Grosso do Sul"
+    },
+    {
+      "@type": "Country",
+      "name": "Brasil"
+    }
+  ],
+  "availableChannel": {
+    "@type": "ServiceChannel",
+    "serviceType": "Atendimento por videochamada e WhatsApp",
+    "servicePhone": "+5567992473726",
+    "serviceUrl": "https://wa.me/5567992473726"
+  },
+  "sameAs": [
+    "https://instagram.com/ceres_solucoes"
+  ],
+  "knowsAbout": [
+    "criação de sites",
+    "desenvolvimento web",
+    "landing pages",
+    "registro de domínios",
+    "SEO local",
+    "Core Web Vitals",
+    "Google Business Profile",
+    "design responsivo"
+  ],
+  "employee": [
+    {
+      "@type": "Person",
+      "name": "Luis",
+      "jobTitle": "Desenvolvedor"
+    },
+    {
+      "@type": "Person",
+      "name": "João",
+      "jobTitle": "Administrador"
+    }
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Serviços da Céres Hub",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Criação de Websites",
+          "description": "Sites institucionais e landing pages com design exclusivo e responsivo, otimizados para mobile e velocidade, com integração a WhatsApp e redes sociais. Prazo de entrega de 30 dias.",
+          "provider": {
+            "@id": "https://www.cereshub.com.br/#organizacao"
+          },
+          "areaServed": [
+            {
+              "@type": "City",
+              "name": "Campo Grande"
+            },
+            {
+              "@type": "Country",
+              "name": "Brasil"
+            }
+          ]
+        },
+        "url": "https://www.cereshub.com.br/#servicos",
+        "priceCurrency": "BRL",
+        "priceSpecification": {
+          "@type": "PriceSpecification",
+          "minPrice": 800,
+          "priceCurrency": "BRL",
+          "valueAddedTaxIncluded": true
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Registro & Gestão de Domínios",
+          "description": "Busca e registro de domínios, configuração de DNS e e-mail profissional, alertas de renovação e migração assistida.",
+          "provider": {
+            "@id": "https://www.cereshub.com.br/#organizacao"
+          },
+          "areaServed": [
+            {
+              "@type": "City",
+              "name": "Campo Grande"
+            },
+            {
+              "@type": "Country",
+              "name": "Brasil"
+            }
+          ]
+        },
+        "url": "https://www.cereshub.com.br/#servicos"
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Otimização & SEO",
+          "description": "Configuração de meta tags e estrutura, Google Analytics e Search Console, velocidade e Core Web Vitals e SEO local via Google Business.",
+          "provider": {
+            "@id": "https://www.cereshub.com.br/#organizacao"
+          },
+          "areaServed": [
+            {
+              "@type": "City",
+              "name": "Campo Grande"
+            },
+            {
+              "@type": "Country",
+              "name": "Brasil"
+            }
+          ]
+        },
+        "url": "https://www.cereshub.com.br/#servicos"
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Suporte & Manutenção",
+          "description": "Monitoramento de disponibilidade, atualizações de conteúdo, backups automáticos mensais e suporte via WhatsApp em horário comercial.",
+          "provider": {
+            "@id": "https://www.cereshub.com.br/#organizacao"
+          },
+          "areaServed": [
+            {
+              "@type": "City",
+              "name": "Campo Grande"
+            },
+            {
+              "@type": "Country",
+              "name": "Brasil"
+            }
+          ]
+        },
+        "url": "https://www.cereshub.com.br/#servicos"
+      }
+    ]
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "@type": "FAQPage",
+  "@id": "https://www.cereshub.com.br/#faq",
+  "inLanguage": "pt-BR",
+  "isPartOf": {
+    "@id": "https://www.cereshub.com.br/#website"
+  },
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Quanto custa criar um site em Campo Grande?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Os sites da Céres Hub começam em R$ 800. O valor final depende do escopo: número de páginas, integrações necessárias, se inclui o registro do domínio e se haverá manutenção contínua depois do lançamento. A Céres Hub monta o orçamento após uma reunião de descoberta, em que entende o negócio, o público-alvo e os objetivos. Fale pelo WhatsApp (67) 9 9247-3726 para receber uma estimativa do seu caso."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Quanto tempo leva para o site ficar pronto?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "O prazo de entrega é de 30 dias, contados a partir da reunião de descoberta. Nesse período o projeto passa por quatro etapas: descoberta, com reunião estratégica sobre negócio, público-alvo, concorrência e objetivos; arquitetura e design, com wireframes, paleta de cores e estratégia de conteúdo; desenvolvimento, com codificação e refino por feedbacks iterativos até a aprovação; e lançamento, com publicação, configuração de domínio e analytics."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "A Céres Hub registra o domínio para mim?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sim. O serviço de Registro & Gestão de Domínios cobre a busca e o registro do domínio, a configuração de DNS e e-mail profissional, alertas automáticos de renovação e a transferência ou migração assistida de domínios que já existem."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "O site vai funcionar bem no celular?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sim. Todo site entregue pela Céres Hub é responsivo e otimizado para mobile e velocidade, com acompanhamento dos Core Web Vitals, as métricas que o Google usa para medir a experiência de carregamento e estabilidade visual da página."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Vocês dão suporte depois que o site entra no ar?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sim. O serviço de Suporte & Manutenção inclui monitoramento de disponibilidade, atualizações de conteúdo e plugins, backups automáticos mensais e atendimento via WhatsApp em horário comercial."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "O que é SEO local e a Céres Hub faz esse serviço?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "SEO local é o conjunto de otimizações que faz uma empresa aparecer nas buscas de quem procura serviços perto de si, como \"agência digital em Campo Grande\" ou \"criação de sites em Campo Grande\", e também no mapa do Google. A Céres Hub faz esse trabalho: configuração de meta tags e estrutura, Google Analytics e Search Console, ajustes de velocidade e Core Web Vitals e otimização do perfil no Google Business."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "A Céres Hub atende empresas fora de Campo Grande?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sim. A Céres Hub é sediada em Campo Grande, Mato Grosso do Sul, e atende empresas de outras cidades de MS e do restante do Brasil. Todo o processo, da reunião de descoberta às aprovações de design e ao lançamento, é conduzido por videochamada e WhatsApp, sem necessidade de encontro presencial."
+      }
+    }
+  ]
+}
