@@ -13,7 +13,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 const { post } = Astro.props;
 const { Content } = await render(post);
-const { title, description, category, publishedAt, updatedAt } = post.data;
+const { title, seoTitle, description, category, publishedAt, updatedAt } = post.data;
 
 const path = `/blog/${post.id}/`;
 const schema = [
@@ -29,7 +29,7 @@ const fmt = (d: Date) =>
 const foiAtualizado = updatedAt && updatedAt.valueOf() !== publishedAt.valueOf();
 ---
 
-<Base title={`${title} | Céres Hub`} description={description} ogType="article">
+<Base title={`${seoTitle ?? title} | Céres Hub`} description={description} ogType="article">
   <JsonLd slot="head" nodes={schema} />
 
   <PageHero

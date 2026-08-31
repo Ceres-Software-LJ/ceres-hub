@@ -1,5 +1,6 @@
 ---
 title: '12 perguntas para fazer antes de contratar uma agência de sites'
+seoTitle: '12 perguntas antes de contratar uma agência'
 description: 'Um checklist para comparar propostas de agências digitais: escopo, prazo, domínio, revisões, suporte e o que acontece se a relação acabar.'
 category: 'Checklist'
 publishedAt: 2026-08-31

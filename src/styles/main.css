@@ -1,9 +1,33 @@
+  /* ══════════════════════════════════════
+     FALLBACKS COM MÉTRICA AJUSTADA
+     As fontes vêm do Google Fonts e chegam depois do primeiro paint. Sem isto,
+     a troca da fonte de sistema pela definitiva reflui o texto inteiro — era
+     0.31 de CLS, medido com rede lenta. Os números abaixo foram medidos no
+     navegador comparando cada fonte com a Arial, não estimados.
+  ══════════════════════════════════════ */
+  @font-face {
+    font-family: 'Space Grotesk Fallback';
+    src: local('Arial'), local('Helvetica Neue'), local('Liberation Sans');
+    size-adjust: 105.94%;
+    ascent-override: 92.51%;
+    descent-override: 27.37%;
+    line-gap-override: 0%;
+  }
+  @font-face {
+    font-family: 'Inter Fallback';
+    src: local('Arial'), local('Helvetica Neue'), local('Liberation Sans');
+    size-adjust: 105.52%;
+    ascent-override: 91.92%;
+    descent-override: 22.74%;
+    line-gap-override: 0%;
+  }
+
   /* ── TOKENS ── */
   :root {
     --navy:       #16283D;
     --navy-90:    rgba(22,40,61,0.92);
     --blue-str:   #285C99;
-    --accent:     #3A80C3;
+    --accent:     #377AB9;
     --sky:        #5BA0DB;
     --sky-20:     rgba(91,160,219,0.18);
     --sky-10:     rgba(91,160,219,0.10);
@@ -26,7 +50,7 @@
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
   body {
-    font-family: 'Inter', system-ui, sans-serif;
+    font-family: 'Inter', 'Inter Fallback', system-ui, sans-serif;
     background: var(--body-bg);
     color: var(--text-body);
     line-height: 1.6;
@@ -37,9 +61,9 @@
   button { cursor: pointer; border: none; background: none; font-family: inherit; }
 
   /* ── TYPOGRAPHY ── */
-  .t-display { font-family: 'Space Grotesk', sans-serif; font-weight: 700; letter-spacing: -0.03em; text-wrap: balance; line-height: 1.1; }
-  .t-headline { font-family: 'Space Grotesk', sans-serif; font-weight: 600; letter-spacing: -0.02em; text-wrap: balance; line-height: 1.2; }
-  .t-label { font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; }
+  .t-display { font-family: 'Space Grotesk', 'Space Grotesk Fallback', sans-serif; font-weight: 700; letter-spacing: -0.03em; text-wrap: balance; line-height: 1.1; }
+  .t-headline { font-family: 'Space Grotesk', 'Space Grotesk Fallback', sans-serif; font-weight: 600; letter-spacing: -0.02em; text-wrap: balance; line-height: 1.2; }
+  .t-label { font-family: 'Space Grotesk', 'Space Grotesk Fallback', sans-serif; font-weight: 600; font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; }
   .t-body { font-size: 1rem; line-height: 1.7; }
   .t-small { font-size: 0.875rem; line-height: 1.6; }
 
@@ -71,7 +95,7 @@
   .nav__logo { display: flex; align-items: center; gap: 10px; }
   .nav__logo > div { display: flex; flex-direction: column; }
   .nav__logo-text {
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Space Grotesk', 'Space Grotesk Fallback', sans-serif;
     font-weight: 700; font-size: 1.1rem;
     color: #fff; letter-spacing: -0.01em;
   }
@@ -87,7 +111,7 @@
     background: var(--accent); color: #fff;
     padding: 9px 20px; border-radius: var(--radius-btn);
     font-size: 0.875rem; font-weight: 600;
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Space Grotesk', 'Space Grotesk Fallback', sans-serif;
     transition: background 0.2s, transform 0.15s;
   }
   .nav__cta:hover { background: #2f6fad; transform: translateY(-1px); }
@@ -255,7 +279,7 @@
     display: flex; align-items: center; gap: 5px;
     padding: 3px 10px; border-radius: 20px;
     font-size: 10px; font-weight: 700;
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Space Grotesk', 'Space Grotesk Fallback', sans-serif;
     letter-spacing: 0.04em;
     white-space: nowrap;
   }
@@ -478,9 +502,9 @@
   }
   .hero__eyebrow-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--sky); flex-shrink: 0; animation: blink 2s ease infinite; }
   @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
-  .hero__eyebrow span { font-size: 0.75rem; font-weight: 600; font-family: 'Space Grotesk', sans-serif; letter-spacing: 0.06em; color: var(--sky); text-transform: uppercase; }
+  .hero__eyebrow span { font-size: 0.75rem; font-weight: 600; font-family: 'Space Grotesk', 'Space Grotesk Fallback', sans-serif; letter-spacing: 0.06em; color: var(--sky); text-transform: uppercase; }
   .hero__title {
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Space Grotesk', 'Space Grotesk Fallback', sans-serif;
     font-weight: 700;
     font-size: clamp(2.5rem, 5vw, 4rem);
     letter-spacing: -0.04em;
@@ -500,7 +524,7 @@
   .btn {
     display: inline-flex; align-items: center; gap: 8px;
     padding: 14px 28px; border-radius: var(--radius-btn);
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Space Grotesk', 'Space Grotesk Fallback', sans-serif;
     font-weight: 600; font-size: 0.95rem;
     transition: all 0.2s;
   }
@@ -527,7 +551,7 @@
     border-top: 1px solid rgba(91,160,219,0.15);
   }
   .hero__stat-num {
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Space Grotesk', 'Space Grotesk Fallback', sans-serif;
     font-size: 2rem; font-weight: 700;
     color: #fff; letter-spacing: -0.04em;
   }
@@ -545,13 +569,13 @@
   .section-header--centered { text-align: center; }
   .eyebrow {
     display: inline-block;
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Space Grotesk', 'Space Grotesk Fallback', sans-serif;
     font-size: 0.72rem; font-weight: 600;
     letter-spacing: 0.12em; text-transform: uppercase;
-    color: var(--accent); margin-bottom: 12px;
+    color: var(--blue-str); margin-bottom: 12px;
   }
   .section-title {
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Space Grotesk', 'Space Grotesk Fallback', sans-serif;
     font-size: clamp(1.75rem, 3.5vw, 2.5rem);
     font-weight: 700; letter-spacing: -0.03em;
     color: var(--text-body); text-wrap: balance;
@@ -603,7 +627,7 @@
   .member-card__avatar-fallback {
     width: 100%; height: 100%;
     display: flex; align-items: center; justify-content: center;
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Space Grotesk', 'Space Grotesk Fallback', sans-serif;
     font-size: 5rem; font-weight: 700;
     color: rgba(255,255,255,0.15);
     letter-spacing: -0.04em;
@@ -624,7 +648,7 @@
     border: 1px solid rgba(91,160,219,0.35);
     border-radius: 100px;
     padding: 4px 12px;
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Space Grotesk', 'Space Grotesk Fallback', sans-serif;
     font-size: 0.7rem; font-weight: 600;
     letter-spacing: 0.08em; text-transform: uppercase;
     color: #fff;
@@ -633,14 +657,14 @@
     padding: 24px 24px 28px;
   }
   .member-card__name {
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Space Grotesk', 'Space Grotesk Fallback', sans-serif;
     font-size: 1.35rem; font-weight: 700;
     letter-spacing: -0.03em; color: var(--text-body);
     margin-bottom: 6px;
   }
   .member-card__title {
     font-size: 0.8rem; font-weight: 600;
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Space Grotesk', 'Space Grotesk Fallback', sans-serif;
     letter-spacing: 0.08em; text-transform: uppercase;
     color: var(--accent); margin-bottom: 14px;
   }
@@ -653,7 +677,7 @@
   }
   .member-skill {
     font-size: 0.72rem; font-weight: 600;
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Space Grotesk', 'Space Grotesk Fallback', sans-serif;
     letter-spacing: 0.03em;
     padding: 4px 11px; border-radius: 100px;
     background: var(--sky-10);
@@ -868,13 +892,13 @@
   .project-card__tags { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 10px; }
   .tag {
     font-size: 0.68rem; font-weight: 600;
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Space Grotesk', 'Space Grotesk Fallback', sans-serif;
     letter-spacing: 0.04em; text-transform: uppercase;
     padding: 3px 9px; border-radius: 100px;
     background: var(--sky-10); color: var(--blue-str);
   }
   .project-card__name {
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Space Grotesk', 'Space Grotesk Fallback', sans-serif;
     font-size: 1.15rem; font-weight: 700;
     letter-spacing: -0.02em; color: var(--text-body);
     margin-bottom: 6px;
@@ -883,7 +907,7 @@
   .project-card__link {
     display: inline-flex; align-items: center; gap: 6px;
     font-size: 0.85rem; font-weight: 600;
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Space Grotesk', 'Space Grotesk Fallback', sans-serif;
     color: var(--accent);
     transition: gap 0.2s;
   }
@@ -926,10 +950,10 @@
   }
   .insight-icon svg { width: 20px; height: 20px; color: var(--accent); }
   .insight-card--featured .insight-icon { background: rgba(91,160,219,0.15); }
-  .insight-category { font-size: 0.72rem; font-weight: 600; font-family: 'Space Grotesk', sans-serif; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); }
-  .insight-title { font-family: 'Space Grotesk', sans-serif; font-size: 1.05rem; font-weight: 700; letter-spacing: -0.02em; color: var(--text-body); line-height: 1.3; }
+  .insight-category { font-size: 0.72rem; font-weight: 600; font-family: 'Space Grotesk', 'Space Grotesk Fallback', sans-serif; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); }
+  .insight-title { font-family: 'Space Grotesk', 'Space Grotesk Fallback', sans-serif; font-size: 1.05rem; font-weight: 700; letter-spacing: -0.02em; color: var(--text-body); line-height: 1.3; }
   .insight-excerpt { font-size: 0.875rem; color: var(--text-muted); line-height: 1.65; flex: 1; }
-  .insight-read { font-size: 0.8rem; font-weight: 600; font-family: 'Space Grotesk', sans-serif; color: var(--accent); display: flex; align-items: center; gap: 5px; transition: gap 0.2s; }
+  .insight-read { font-size: 0.8rem; font-weight: 600; font-family: 'Space Grotesk', 'Space Grotesk Fallback', sans-serif; color: var(--accent); display: flex; align-items: center; gap: 5px; transition: gap 0.2s; }
   .insight-read:hover { gap: 9px; }
   .insight-read svg { width: 12px; height: 12px; }
   .insight-card--featured .insight-read { color: var(--sky); }
@@ -969,7 +993,7 @@
   }
   .service-icon svg { width: 26px; height: 26px; color: var(--accent); }
   .service-name {
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Space Grotesk', 'Space Grotesk Fallback', sans-serif;
     font-size: 1.1rem; font-weight: 700;
     letter-spacing: -0.02em; color: var(--text-body);
     margin-bottom: 8px;
@@ -1005,11 +1029,11 @@
     display: flex; align-items: center; justify-content: center;
   }
   .diff-icon svg { width: 24px; height: 24px; color: var(--blue-str); }
-  .diff-name { font-family: 'Space Grotesk', sans-serif; font-size: 1rem; font-weight: 700; color: var(--text-body); letter-spacing: -0.01em; }
+  .diff-name { font-family: 'Space Grotesk', 'Space Grotesk Fallback', sans-serif; font-size: 1rem; font-weight: 700; color: var(--text-body); letter-spacing: -0.01em; }
   .diff-desc { font-size: 0.875rem; color: var(--text-muted); line-height: 1.7; }
 
   /* Process timeline */
-  .process-title { font-family: 'Space Grotesk', sans-serif; font-size: 1.5rem; font-weight: 700; letter-spacing: -0.03em; color: var(--text-body); text-align: center; margin-bottom: 48px; }
+  .process-title { font-family: 'Space Grotesk', 'Space Grotesk Fallback', sans-serif; font-size: 1.5rem; font-weight: 700; letter-spacing: -0.03em; color: var(--text-body); text-align: center; margin-bottom: 48px; }
   .process-track {
     display: grid; grid-template-columns: repeat(4,1fr);
     position: relative;
@@ -1031,7 +1055,7 @@
     width: 56px; height: 56px; border-radius: 50%;
     background: var(--card-bg); border: 2px solid var(--blue-str);
     display: flex; align-items: center; justify-content: center;
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Space Grotesk', 'Space Grotesk Fallback', sans-serif;
     font-size: 0.85rem; font-weight: 700;
     color: var(--accent); z-index: 1;
     position: relative;
@@ -1039,8 +1063,8 @@
   }
   .process-step:nth-child(2) .process-step__num { border-color: var(--accent); }
   .process-step:nth-child(3) .process-step__num { border-color: var(--accent); }
-  .process-step:nth-child(4) .process-step__num { border-color: var(--sky); color: var(--sky); }
-  .process-step__name { font-family: 'Space Grotesk', sans-serif; font-size: 0.9rem; font-weight: 700; color: var(--text-body); letter-spacing: -0.01em; }
+  .process-step:nth-child(4) .process-step__num { border-color: var(--sky); color: var(--accent); }
+  .process-step__name { font-family: 'Space Grotesk', 'Space Grotesk Fallback', sans-serif; font-size: 0.9rem; font-weight: 700; color: var(--text-body); letter-spacing: -0.01em; }
   .process-step__desc { font-size: 0.8rem; color: var(--text-muted); line-height: 1.6; max-width: 180px; }
 
   /* ══════════════════════════════════════
@@ -1064,7 +1088,7 @@
     margin-bottom: 60px;
   }
   .footer__brand p { font-size: 0.9rem; color: var(--text-inv-m); line-height: 1.7; margin-top: 16px; max-width: 280px; }
-  .footer__col-title { font-family: 'Space Grotesk', sans-serif; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--sky); margin-bottom: 20px; }
+  .footer__col-title { font-family: 'Space Grotesk', 'Space Grotesk Fallback', sans-serif; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--sky); margin-bottom: 20px; }
   .footer__links { display: flex; flex-direction: column; gap: 10px; }
   .footer__links a { font-size: 0.875rem; color: var(--text-inv-m); transition: color 0.2s; }
   .footer__links a:hover { color: #fff; }
@@ -1093,7 +1117,7 @@
 
   /* Footer logo */
   .footer-logo { display: flex; align-items: center; gap: 10px; }
-  .footer-logo-text { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 1.15rem; color: #fff; letter-spacing: -0.01em; }
+  .footer-logo-text { font-family: 'Space Grotesk', 'Space Grotesk Fallback', sans-serif; font-weight: 700; font-size: 1.15rem; color: #fff; letter-spacing: -0.01em; }
   .footer-logo-sub { font-size: 0.6rem; letter-spacing: 0.08em; opacity: 0.5; color: #fff; font-weight: 400; }
 
   /* ── RESPONSIVE ── */
@@ -1433,7 +1457,7 @@
   }
   .page-hero__inner { position: relative; z-index: 1; max-width: 760px; }
   .page-hero__title {
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Space Grotesk', 'Space Grotesk Fallback', sans-serif;
     font-size: clamp(1.9rem, 4vw, 2.9rem);
     font-weight: 700; letter-spacing: -0.03em;
     line-height: 1.12; color: #fff; text-wrap: balance;
@@ -1457,13 +1481,13 @@
   .prose { max-width: 68ch; font-size: 1rem; line-height: 1.75; color: var(--text-body); }
   .prose > * + * { margin-top: 1.1em; }
   .prose h2 {
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Space Grotesk', 'Space Grotesk Fallback', sans-serif;
     font-size: 1.45rem; font-weight: 700; letter-spacing: -0.02em;
     line-height: 1.25; color: var(--text-body);
     margin-top: 2.2em; text-wrap: balance;
   }
   .prose h3 {
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Space Grotesk', 'Space Grotesk Fallback', sans-serif;
     font-size: 1.12rem; font-weight: 600; letter-spacing: -0.01em;
     color: var(--text-body); margin-top: 1.8em;
   }
@@ -1483,7 +1507,7 @@
   }
   .prose table { width: 100%; border-collapse: collapse; font-size: 0.92rem; }
   .prose th, .prose td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--divider); }
-  .prose th { font-family: 'Space Grotesk', sans-serif; font-weight: 600; color: var(--text-body); }
+  .prose th { font-family: 'Space Grotesk', 'Space Grotesk Fallback', sans-serif; font-weight: 600; color: var(--text-body); }
   .prose__updated { font-size: 0.85rem; color: var(--text-muted); }
   /* Tabelas largas rolam sozinhas em vez de esticar a página. */
   .prose__scroll { overflow-x: auto; }
@@ -1511,7 +1535,9 @@
   /* Links jurídicos na barra inferior do rodapé. */
   .footer__copy a {
     color: var(--text-inv-m);
-    text-decoration: none;
+    /* Sublinhado, e nao so a cor, distingue o link do texto ao redor (WCAG 1.4.1). */
+    text-decoration: underline;
+    text-underline-offset: 2px;
     margin-left: 14px;
     transition: color 0.2s;
   }

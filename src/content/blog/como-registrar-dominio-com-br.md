@@ -1,5 +1,6 @@
 ---
 title: 'Como registrar um domínio .com.br: o passo a passo'
+seoTitle: 'Como registrar um domínio .com.br'
 description: 'Como funciona o registro.br, quanto custa um domínio .com.br, o que é DNS e por que o domínio precisa estar no seu nome — não no da agência.'
 category: 'Domínios'
 publishedAt: 2026-08-31

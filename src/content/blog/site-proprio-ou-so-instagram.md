@@ -1,5 +1,6 @@
 ---
 title: 'Site próprio ou só Instagram? O que cada um resolve'
+seoTitle: 'Site próprio ou só Instagram?'
 description: 'Rede social e site fazem trabalhos diferentes. Entenda o que você perde vendendo só pelo Instagram e quando faz sentido ter um endereço que é seu.'
 category: 'Estratégia'
 publishedAt: 2026-08-31

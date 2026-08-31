@@ -5,6 +5,8 @@ const blog = defineCollection({
   loader: glob({ base: './src/content/blog', pattern: '**/*.md' }),
   schema: z.object({
     title: z.string(),
+    /** Usado no <title> quando o título de exibição passa de ~60 chars com a marca. */
+    seoTitle: z.string().optional(),
     /** Vira a meta description do artigo: escreva para a SERP, não para o site. */
     description: z.string(),
     /** Rótulo curto exibido no card. */

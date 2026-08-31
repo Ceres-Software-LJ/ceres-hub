@@ -1,6 +1,6 @@
 ---
 title: 'Quanto custa fazer um site em Campo Grande?'
-description: 'Sites a partir de R$ 800 em Campo Grande, MS. O que faz o preço subir, o que costuma ficar de fora do orçamento e como comparar propostas de agências sem se perder.'
+description: 'Sites a partir de R$ 800 em Campo Grande, MS. O que faz o preço subir, o que costuma ficar de fora do orçamento e como comparar propostas de agências.'
 category: 'Preços'
 publishedAt: 2026-08-31
 featured: true
