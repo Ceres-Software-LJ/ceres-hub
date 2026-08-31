@@ -1,6 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import JsonLd from '../components/JsonLd.astro';
+import TeamCards from '../components/TeamCards.astro';
 import organization from '../data/organization.json';
 import website from '../data/website.json';
 import faq from '../data/faq.json';
@@ -621,54 +622,7 @@ import faq from '../data/faq.json';
 
     <div class="about__grid">
 
-      <!-- Luis -->
-      <article class="member-card">
-        <div class="member-card__photo">
-          <img src="/assets/images/team/luis.jpg" alt="Luis, Desenvolvedor na Céres Hub"
-               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
-          <div class="member-card__avatar-fallback" style="display:none">L</div>
-          <div class="member-card__photo-overlay"></div>
-          <span class="member-card__role-badge">Desenvolvedor</span>
-        </div>
-        <div class="member-card__body">
-          <h3 class="member-card__name">Luis</h3>
-          <div class="member-card__title">Desenvolvedor & Co-fundador</div>
-          <p class="member-card__bio">
-            Responsável por transformar ideias em experiências digitais reais. Cuida de cada linha de código, do design ao deploy, garantindo sites rápidos, bonitos e que funcionam.
-          </p>
-          <div class="member-card__skills">
-            <span class="member-skill">HTML & CSS</span>
-            <span class="member-skill">JavaScript</span>
-            <span class="member-skill">UI Design</span>
-            <span class="member-skill">Performance Web</span>
-            <span class="member-skill">SEO Técnico</span>
-          </div>
-        </div>
-      </article>
-
-      <!-- João -->
-      <article class="member-card">
-        <div class="member-card__photo">
-          <img src="/assets/images/team/joao.jpg" alt="João, Administrador na Céres Hub"
-               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
-          <div class="member-card__avatar-fallback" style="display:none">J</div>
-          <div class="member-card__photo-overlay"></div>
-          <span class="member-card__role-badge">Administrador</span>
-        </div>
-        <div class="member-card__body">
-          <h3 class="member-card__name">João</h3>
-          <div class="member-card__title">Administrador & Co-fundador</div>
-          <p class="member-card__bio">
-            Estrategista e gestor do negócio. Conecta clientes com a solução certa, conduz os projetos do briefing à entrega e mantém tudo funcionando com agilidade e transparência.
-          </p>
-          <div class="member-card__skills">
-            <span class="member-skill">Gestão de Projetos</span>
-            <span class="member-skill">Relacionamento</span>
-            <span class="member-skill">Estratégia Digital</span>
-            <span class="member-skill">Domínios & Hosting</span>
-          </div>
-        </div>
-      </article>
+      <TeamCards />
 
     </div>
   </div>

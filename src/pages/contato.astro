@@ -1,0 +1,120 @@
+---
+import Base from '../layouts/Base.astro';
+import JsonLd from '../components/JsonLd.astro';
+import PageHero from '../components/PageHero.astro';
+import organization from '../data/organization.json';
+import { breadcrumb, webPage, ORG_ID } from '../lib/schema.js';
+
+const title = 'Contato | Céres Hub — Campo Grande, MS';
+const description =
+  'Fale com a Céres Hub: WhatsApp (67) 9 9247-3726, e-mail ceres.cto@gmail.com. Agência digital em Campo Grande, MS. Resposta em até 48h úteis.';
+
+const schema = [
+  { ...organization, '@id': ORG_ID },
+  webPage('ContactPage', { path: '/contato/', name: title, description }),
+  breadcrumb([{ label: 'Contato', href: '/contato/' }]),
+];
+
+const WHATSAPP =
+  'https://wa.me/5567992473726?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os%20da%20C%C3%A9res%20Hub!';
+
+const canais = [
+  {
+    nome: 'WhatsApp',
+    valor: '(67) 9 9247-3726',
+    href: WHATSAPP,
+    desc: 'O caminho mais rápido. É por aqui que conduzimos aprovações e suporte.',
+    externo: true,
+  },
+  {
+    nome: 'E-mail',
+    valor: 'ceres.cto@gmail.com',
+    href: 'mailto:ceres.cto@gmail.com',
+    desc: 'Melhor para enviar material, briefings e documentos.',
+    externo: false,
+  },
+  {
+    nome: 'Instagram',
+    valor: '@ceres_solucoes',
+    href: 'https://instagram.com/ceres_solucoes',
+    desc: 'Trabalhos recentes e bastidores dos projetos.',
+    externo: true,
+  },
+];
+---
+
+<Base title={title} description={description}>
+  <JsonLd slot="head" nodes={schema} />
+
+  <PageHero
+    eyebrow="Contato"
+    title="Vamos conversar sobre o seu site"
+    sub="Sem formulário longo e sem robô. Você fala direto com quem vai tocar o projeto — normalmente respondemos em até 48 horas úteis."
+    crumbs={[{ label: 'Contato', href: '/contato/' }]}
+  />
+
+  <main id="conteudo-principal">
+
+    <section class="section">
+      <div class="container">
+        <div class="services-grid">
+          {canais.map((canal) => (
+            <a
+              class="service-card"
+              href={canal.href}
+              target={canal.externo ? '_blank' : undefined}
+              rel={canal.externo ? 'noopener' : undefined}
+              style="text-decoration:none;color:inherit;"
+            >
+              <h2 class="service-name">{canal.nome}</h2>
+              <p class="service-desc">{canal.desc}</p>
+              <p class="insight-read">{canal.valor}</p>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="section services">
+      <div class="container">
+        <div class="prose">
+          <h2>Onde estamos</h2>
+          <p>
+            <strong>Campo Grande, Mato Grosso do Sul, Brasil.</strong> Atendemos presencialmente na cidade
+            e remotamente em todo o país — reunião de descoberta, aprovações e lançamento acontecem por
+            videochamada e WhatsApp, sem exigir encontro presencial.
+          </p>
+
+          <h2>O que acontece depois que você chama</h2>
+          <ol>
+            <li>
+              <strong>Primeira conversa.</strong> Entendemos rapidamente o que você precisa e se é algo
+              que fazemos bem. Se não for, dizemos na hora.
+            </li>
+            <li>
+              <strong>Reunião de descoberta.</strong> Uma conversa mais funda sobre o negócio, o
+              público-alvo, a concorrência e os objetivos.
+            </li>
+            <li>
+              <strong>Orçamento.</strong> Sai depois da descoberta, com escopo escrito. Os sites começam
+              em R$ 800 e o prazo de entrega é de 30 dias contados a partir dessa reunião.
+            </li>
+          </ol>
+
+          <h2>Horário de atendimento</h2>
+          <p>
+            Atendimento e suporte por WhatsApp em horário comercial. Mensagens fora desse período são
+            respondidas no próximo dia útil.
+          </p>
+
+          <p>
+            Quer entender melhor como trabalhamos antes de chamar? A página
+            <a href="/sobre/">sobre a Céres Hub</a> detalha a equipe e as quatro etapas do processo, e o
+            <a href="/blog/">blog</a> responde as dúvidas que mais recebemos.
+          </p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</Base>

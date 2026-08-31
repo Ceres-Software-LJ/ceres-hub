@@ -1413,3 +1413,106 @@
     .faq__q { padding: 18px 20px; font-size: 1rem; }
     .faq__a { padding: 0 20px 20px; }
   }
+
+  /* ══════════════════════════════════════
+     PÁGINAS INTERNAS
+     A .nav é fixed sobre fundo navy: as páginas internas abrem com uma
+     faixa escura para o menu continuar legível, como acontece no hero.
+  ══════════════════════════════════════ */
+  .page-hero {
+    background: linear-gradient(150deg, var(--navy) 0%, #1e3655 100%);
+    color: var(--text-inv);
+    padding: 148px 0 64px;
+    position: relative;
+    overflow: hidden;
+  }
+  .page-hero::after {
+    content: ''; position: absolute; inset: 0;
+    background: radial-gradient(circle at 82% 12%, rgba(91,160,219,0.16), transparent 55%);
+    pointer-events: none;
+  }
+  .page-hero__inner { position: relative; z-index: 1; max-width: 760px; }
+  .page-hero__title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(1.9rem, 4vw, 2.9rem);
+    font-weight: 700; letter-spacing: -0.03em;
+    line-height: 1.12; color: #fff; text-wrap: balance;
+  }
+  .page-hero__sub {
+    margin-top: 16px; font-size: 1.05rem; line-height: 1.65;
+    color: var(--text-inv-m); max-width: 60ch;
+  }
+  .page-hero .eyebrow { color: var(--sky); }
+
+  /* ── Breadcrumb ── */
+  .breadcrumb { position: relative; z-index: 1; margin-bottom: 18px; font-size: 0.82rem; }
+  .breadcrumb ol { list-style: none; display: flex; flex-wrap: wrap; align-items: center; gap: 8px; padding: 0; margin: 0; }
+  .breadcrumb li { display: flex; align-items: center; gap: 8px; color: var(--text-inv-m); }
+  .breadcrumb li + li::before { content: '/'; color: rgba(232,240,250,0.35); }
+  .breadcrumb a { color: var(--text-inv-m); text-decoration: none; transition: color 0.2s; }
+  .breadcrumb a:hover { color: var(--sky); }
+  .breadcrumb [aria-current='page'] { color: var(--text-inv); }
+
+  /* ── Texto corrido (jurídico e artigos) ── */
+  .prose { max-width: 68ch; font-size: 1rem; line-height: 1.75; color: var(--text-body); }
+  .prose > * + * { margin-top: 1.1em; }
+  .prose h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.45rem; font-weight: 700; letter-spacing: -0.02em;
+    line-height: 1.25; color: var(--text-body);
+    margin-top: 2.2em; text-wrap: balance;
+  }
+  .prose h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.12rem; font-weight: 600; letter-spacing: -0.01em;
+    color: var(--text-body); margin-top: 1.8em;
+  }
+  .prose h2 + *, .prose h3 + * { margin-top: 0.6em; }
+  .prose a { color: var(--blue-str); text-decoration: underline; text-underline-offset: 2px; }
+  .prose a:hover { color: var(--accent); }
+  .prose strong { font-weight: 600; color: var(--text-body); }
+  .prose ul, .prose ol { padding-left: 1.35em; }
+  .prose li + li { margin-top: 0.45em; }
+  .prose ul { list-style: disc; }
+  .prose ol { list-style: decimal; }
+  .prose hr { border: none; border-top: 1px solid var(--divider); margin: 2.4em 0; }
+  .prose blockquote {
+    border-left: 3px solid var(--sky);
+    padding: 4px 0 4px 18px;
+    color: var(--text-muted);
+  }
+  .prose table { width: 100%; border-collapse: collapse; font-size: 0.92rem; }
+  .prose th, .prose td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--divider); }
+  .prose th { font-family: 'Space Grotesk', sans-serif; font-weight: 600; color: var(--text-body); }
+  .prose__updated { font-size: 0.85rem; color: var(--text-muted); }
+  /* Tabelas largas rolam sozinhas em vez de esticar a página. */
+  .prose__scroll { overflow-x: auto; }
+
+  /* ── Artigos ── */
+  .article-meta {
+    display: flex; flex-wrap: wrap; align-items: center; gap: 10px;
+    position: relative; z-index: 1;
+    margin-top: 18px; font-size: 0.85rem; color: var(--text-inv-m);
+  }
+  .article-meta__dot { width: 3px; height: 3px; border-radius: 50%; background: rgba(232,240,250,0.35); }
+  .insight-card__link { text-decoration: none; color: inherit; display: flex; flex-direction: column; gap: 14px; height: 100%; }
+  .insight-card:has(a:hover) .insight-read { gap: 10px; }
+
+  /* ── Equipe em página própria ── */
+  .team-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+
+  @media (max-width: 860px) {
+    .team-grid { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 640px) {
+    .page-hero { padding: 124px 0 48px; }
+  }
+
+  /* Links jurídicos na barra inferior do rodapé. */
+  .footer__copy a {
+    color: var(--text-inv-m);
+    text-decoration: none;
+    margin-left: 14px;
+    transition: color 0.2s;
+  }
+  .footer__copy a:hover { color: var(--sky); }

@@ -1,0 +1,196 @@
+---
+import Base from '../layouts/Base.astro';
+import JsonLd from '../components/JsonLd.astro';
+import PageHero from '../components/PageHero.astro';
+import { breadcrumb, webPage } from '../lib/schema.js';
+
+const title = 'Política de Privacidade | Céres Hub';
+const description =
+  'Como a Céres Hub coleta, usa e protege dados pessoais, conforme a LGPD (Lei 13.709/2018). Este site não usa cookies nem ferramentas de rastreamento.';
+
+const ATUALIZADO_EM = new Date('2026-08-31T00:00:00Z');
+const atualizadoLegivel = ATUALIZADO_EM.toLocaleDateString('pt-BR', {
+  day: '2-digit',
+  month: 'long',
+  year: 'numeric',
+  timeZone: 'UTC',
+});
+
+const schema = [
+  webPage('WebPage', { path: '/politica-de-privacidade/', name: title, description }),
+  breadcrumb([{ label: 'Política de Privacidade', href: '/politica-de-privacidade/' }]),
+];
+---
+
+<Base title={title} description={description}>
+  <JsonLd slot="head" nodes={schema} />
+
+  <PageHero
+    eyebrow="Jurídico"
+    title="Política de Privacidade"
+    sub="Como a Céres Hub trata dados pessoais, em conformidade com a Lei Geral de Proteção de Dados (Lei nº 13.709/2018)."
+    crumbs={[{ label: 'Política de Privacidade', href: '/politica-de-privacidade/' }]}
+  />
+
+  <main id="conteudo-principal">
+    <section class="section">
+      <div class="container">
+        <div class="prose">
+          <p class="prose__updated">
+            Última atualização: <time datetime={ATUALIZADO_EM.toISOString().slice(0, 10)}>{atualizadoLegivel}</time>
+          </p>
+
+          <h2>1. Quem é o controlador dos dados</h2>
+          <p>
+            <strong>Céres Hub Soluções Digitais</strong>, sediada em Campo Grande, Mato Grosso do Sul,
+            Brasil, é a controladora dos dados pessoais tratados nos termos desta política.
+          </p>
+          <p>
+            Contato para assuntos de privacidade e exercício de direitos:
+            <a href="mailto:ceres.cto@gmail.com">ceres.cto@gmail.com</a>.
+          </p>
+
+          <h2>2. Este site não usa cookies nem rastreamento</h2>
+          <p>
+            O site <strong>cereshub.com.br</strong> não instala cookies, não usa pixels de rastreamento,
+            não executa ferramentas de analytics e não cria perfis de navegação. Nenhum dado é gravado no
+            seu navegador quando você visita estas páginas.
+          </p>
+          <p>
+            A única requisição a terceiros feita pelo site é o carregamento das fontes tipográficas
+            hospedadas no <strong>Google Fonts</strong>. Para entregar os arquivos de fonte, os servidores
+            do Google recebem o seu endereço IP e informações básicas do navegador. Esse tratamento é feito
+            pelo Google, sob a política de privacidade dele.
+          </p>
+
+          <h2>3. Que dados coletamos e quando</h2>
+          <p>
+            Não há formulário de cadastro neste site. Só tratamos dados pessoais quando você nos procura
+            por conta própria, por um dos canais abaixo:
+          </p>
+          <ul>
+            <li>
+              <strong>WhatsApp</strong> — nome ou identificação do perfil, número de telefone e o conteúdo
+              das mensagens que você enviar.
+            </li>
+            <li>
+              <strong>E-mail</strong> — endereço de e-mail, nome e o conteúdo da mensagem e dos anexos.
+            </li>
+            <li>
+              <strong>Instagram</strong> — identificação do perfil e o conteúdo das mensagens, quando o
+              contato acontece por lá.
+            </li>
+          </ul>
+          <p>
+            Durante um projeto contratado, podemos ainda receber dados necessários à execução do serviço,
+            como razão social, CNPJ, endereço, dados de contato da empresa e credenciais de acesso a
+            domínios e hospedagens.
+          </p>
+
+          <h2>4. Para que usamos esses dados</h2>
+          <div class="prose__scroll">
+            <table>
+              <thead>
+                <tr>
+                  <th>Finalidade</th>
+                  <th>Base legal (art. 7º da LGPD)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Responder ao seu contato e elaborar orçamento</td>
+                  <td>Procedimentos preliminares de contrato, a seu pedido (inciso V)</td>
+                </tr>
+                <tr>
+                  <td>Executar o projeto contratado e prestar suporte</td>
+                  <td>Execução de contrato (inciso V)</td>
+                </tr>
+                <tr>
+                  <td>Emitir cobrança e cumprir obrigações fiscais</td>
+                  <td>Cumprimento de obrigação legal (inciso II)</td>
+                </tr>
+                <tr>
+                  <td>Exibir o trabalho no portfólio</td>
+                  <td>Consentimento, pedido separadamente (inciso I)</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p>
+            <strong>Não vendemos dados pessoais</strong> e não os usamos para publicidade de terceiros.
+            Não enviamos comunicação de marketing a quem não pediu.
+          </p>
+
+          <h2>5. Com quem compartilhamos</h2>
+          <p>Compartilhamos dados apenas com quem é necessário para o serviço funcionar:</p>
+          <ul>
+            <li><strong>Registradores de domínio</strong> — os dados do titular exigidos para registrar um domínio, quando esse serviço é contratado.</li>
+            <li><strong>Provedores de hospedagem</strong> — para publicar e manter o site no ar.</li>
+            <li><strong>Google</strong> — quando o cliente contrata a configuração de Analytics, Search Console ou perfil no Google Business.</li>
+            <li><strong>Autoridades públicas</strong> — quando houver obrigação legal ou ordem judicial.</li>
+          </ul>
+          <p>
+            Alguns desses provedores operam servidores fora do Brasil. Nesses casos, a transferência
+            internacional é feita nos termos dos artigos 33 e seguintes da LGPD.
+          </p>
+
+          <h2>6. Por quanto tempo guardamos</h2>
+          <ul>
+            <li><strong>Contatos que não viraram projeto:</strong> até 12 meses após a última interação.</li>
+            <li><strong>Dados de clientes:</strong> durante o contrato e por 5 anos após o encerramento, prazo ligado a obrigações fiscais e à prescrição civil.</li>
+            <li><strong>Credenciais de acesso:</strong> excluídas assim que o serviço é encerrado ou transferido para você.</li>
+          </ul>
+
+          <h2>7. Seus direitos</h2>
+          <p>
+            O artigo 18 da LGPD garante a você o direito de obter, a qualquer momento e gratuitamente:
+            confirmação da existência de tratamento; acesso aos dados; correção de dados incompletos ou
+            desatualizados; anonimização, bloqueio ou eliminação de dados desnecessários ou tratados em
+            desconformidade com a lei; portabilidade; informação sobre com quem compartilhamos; informação
+            sobre a possibilidade de não consentir e as consequências disso; e revogação do consentimento.
+          </p>
+          <p>
+            Para exercer qualquer um deles, escreva para
+            <a href="mailto:ceres.cto@gmail.com">ceres.cto@gmail.com</a>. Respondemos em até 15 dias.
+            Podemos pedir informações que confirmem a sua identidade antes de atender ao pedido — é uma
+            proteção para você.
+          </p>
+          <p>
+            Você também pode apresentar reclamação à Autoridade Nacional de Proteção de Dados (ANPD).
+          </p>
+
+          <h2>8. Segurança</h2>
+          <p>
+            Adotamos medidas técnicas e administrativas para proteger os dados contra acesso não
+            autorizado, perda e destruição: acesso restrito às pessoas da equipe que precisam dele,
+            autenticação em duas etapas nas contas de trabalho e transmissão do site sempre por HTTPS.
+          </p>
+          <p>
+            Nenhum sistema é imune a incidentes. Se ocorrer um incidente de segurança com risco relevante
+            aos seus direitos, comunicaremos você e a ANPD, como determina o artigo 48 da LGPD.
+          </p>
+
+          <h2>9. Menores de idade</h2>
+          <p>
+            Nossos serviços são dirigidos a empresas e profissionais. Não coletamos intencionalmente dados
+            de crianças e adolescentes. Se identificarmos um tratamento assim, ele será eliminado.
+          </p>
+
+          <h2>10. Mudanças nesta política</h2>
+          <p>
+            Esta política pode ser atualizada. Quando isso acontecer, a data de "última atualização" no
+            topo da página muda. Alterações relevantes para quem já é cliente são comunicadas diretamente.
+          </p>
+
+          <hr>
+
+          <p>
+            Dúvidas sobre este documento? Fale com a gente pelo
+            <a href="/contato/">canal de contato</a> ou por
+            <a href="mailto:ceres.cto@gmail.com">ceres.cto@gmail.com</a>.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+</Base>

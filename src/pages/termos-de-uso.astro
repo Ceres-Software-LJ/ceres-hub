@@ -1,0 +1,137 @@
+---
+import Base from '../layouts/Base.astro';
+import JsonLd from '../components/JsonLd.astro';
+import PageHero from '../components/PageHero.astro';
+import { breadcrumb, webPage } from '../lib/schema.js';
+
+const title = 'Termos de Uso | Céres Hub';
+const description =
+  'Condições de uso do site da Céres Hub: propriedade intelectual, links externos, limitação de responsabilidade e como os serviços são contratados.';
+
+const ATUALIZADO_EM = new Date('2026-08-31T00:00:00Z');
+const atualizadoLegivel = ATUALIZADO_EM.toLocaleDateString('pt-BR', {
+  day: '2-digit',
+  month: 'long',
+  year: 'numeric',
+  timeZone: 'UTC',
+});
+
+const schema = [
+  webPage('WebPage', { path: '/termos-de-uso/', name: title, description }),
+  breadcrumb([{ label: 'Termos de Uso', href: '/termos-de-uso/' }]),
+];
+---
+
+<Base title={title} description={description}>
+  <JsonLd slot="head" nodes={schema} />
+
+  <PageHero
+    eyebrow="Jurídico"
+    title="Termos de Uso"
+    sub="As condições que regem o uso deste site e a relação com os serviços da Céres Hub."
+    crumbs={[{ label: 'Termos de Uso', href: '/termos-de-uso/' }]}
+  />
+
+  <main id="conteudo-principal">
+    <section class="section">
+      <div class="container">
+        <div class="prose">
+          <p class="prose__updated">
+            Última atualização: <time datetime={ATUALIZADO_EM.toISOString().slice(0, 10)}>{atualizadoLegivel}</time>
+          </p>
+
+          <h2>1. Sobre estes termos</h2>
+          <p>
+            Este site é mantido pela <strong>Céres Hub Soluções Digitais</strong>, sediada em Campo Grande,
+            Mato Grosso do Sul. Ao navegar por ele, você concorda com as condições descritas aqui. Se não
+            concordar, o caminho é simples: não use o site.
+          </p>
+
+          <h2>2. O que este site é</h2>
+          <p>
+            O site apresenta os serviços da Céres Hub e serve de canal de contato. <strong>Ele não é uma
+            loja</strong>: nenhuma contratação se conclui por aqui, não há pagamento no site e não existe
+            área de cliente.
+          </p>
+
+          <h2>3. Preços e prazos divulgados</h2>
+          <p>
+            Os valores e prazos publicados — sites a partir de <strong>R$ 800</strong>, entrega em
+            <strong>30 dias</strong> contados da reunião de descoberta — são <strong>referências, não
+            proposta comercial</strong>. O preço e o prazo de cada projeto são definidos por escrito após a
+            reunião de descoberta, conforme o escopo acordado, e é esse documento que vale entre as partes.
+          </p>
+
+          <h2>4. Propriedade intelectual</h2>
+          <p>
+            A marca Céres Hub, o logotipo, os textos, o código e a identidade visual deste site pertencem à
+            Céres Hub e são protegidos pela Lei nº 9.610/1998. Você não pode reproduzir, distribuir ou
+            criar obras derivadas desse material sem autorização prévia por escrito.
+          </p>
+          <p>
+            As marcas, os nomes e as imagens dos projetos exibidos no portfólio pertencem aos respectivos
+            clientes e aparecem aqui apenas para identificar trabalhos realizados. A Céres Hub
+            <strong>desenvolveu</strong> esses sites; não é proprietária nem operadora desses negócios.
+          </p>
+          <p>
+            Sobre o que produzimos para você: os direitos de uso do material entregue são transferidos ao
+            cliente nos termos do contrato do projeto, após a quitação. Reservamo-nos o direito de exibir o
+            trabalho no portfólio, salvo pedido em contrário.
+          </p>
+
+          <h2>5. Links para outros sites</h2>
+          <p>
+            Este site tem links para páginas de terceiros — projetos do portfólio, WhatsApp e Instagram.
+            Não controlamos o conteúdo nem as práticas de privacidade desses destinos, e não respondemos
+            por eles. Ao clicar, você passa a se sujeitar aos termos de quem opera aquele endereço.
+          </p>
+
+          <h2>6. Disponibilidade e conteúdo</h2>
+          <p>
+            Procuramos manter o site no ar e as informações corretas e atualizadas, mas o serviço é
+            oferecido "no estado em que se encontra". Podemos alterar, suspender ou encerrar qualquer parte
+            do site a qualquer momento, sem aviso prévio.
+          </p>
+          <p>
+            O conteúdo publicado no blog tem caráter informativo e não substitui uma análise específica do
+            seu caso. Decisões tomadas com base nele são de sua responsabilidade.
+          </p>
+
+          <h2>7. Limitação de responsabilidade</h2>
+          <p>
+            Na máxima extensão permitida pela lei, a Céres Hub não responde por danos indiretos, lucros
+            cessantes ou perda de dados decorrentes do uso ou da impossibilidade de uso deste site. Esta
+            limitação não afasta as responsabilidades assumidas em contrato de prestação de serviços, nem
+            os direitos assegurados pelo Código de Defesa do Consumidor.
+          </p>
+
+          <h2>8. Uso indevido</h2>
+          <p>
+            É vedado usar este site para fins ilícitos, tentar obter acesso não autorizado a sistemas,
+            interferir no funcionamento das páginas ou extrair conteúdo de forma automatizada em volume que
+            comprometa a disponibilidade do serviço.
+          </p>
+
+          <h2>9. Privacidade</h2>
+          <p>
+            O tratamento de dados pessoais está descrito na
+            <a href="/politica-de-privacidade/">Política de Privacidade</a>, que integra estes termos.
+          </p>
+
+          <h2>10. Alterações e foro</h2>
+          <p>
+            Estes termos podem ser atualizados; a data no topo indica a versão vigente. Aplica-se a
+            legislação brasileira, e fica eleito o foro da Comarca de Campo Grande, Mato Grosso do Sul,
+            para dirimir controvérsias.
+          </p>
+
+          <hr>
+
+          <p>
+            Dúvidas sobre estes termos? <a href="/contato/">Fale com a gente</a>.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+</Base>
