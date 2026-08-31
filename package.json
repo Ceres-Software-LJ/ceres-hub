@@ -1,0 +1,18 @@
+{
+  "name": "ceres-hub",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Site institucional da Céres Hub Soluções Digitais",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/sitemap": "^3.6.0",
+    "astro": "^5.14.1"
+  }
+}
