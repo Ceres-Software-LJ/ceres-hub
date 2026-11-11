@@ -223,6 +223,8 @@
     pointer-events: none;
   }
   .process-track.has-scene::before { opacity: 0; }
+  /* A entrada animada (ui.js) dá a cada passo sua própria camada; z-index 1 mantém os passos acima da cena */
+  .process-track.has-scene .process-step { z-index: 1; }
   .process-step__num { transition: background .4s ease, color .12s ease, transform .4s cubic-bezier(.34,1.56,.64,1), box-shadow .4s ease; }
   /* Especificidade acima de .process-step:nth-child(n) .process-step__num */
   .process-track .process-step .process-step__num.is-active {
