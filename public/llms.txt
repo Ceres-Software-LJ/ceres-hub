@@ -57,8 +57,8 @@
 - [FlowBloc](https://flowbloc.com.br): plataforma de organização e execução de tarefas.
 - [FinBloc](https://finbloc.com.br): gestão financeira com relatórios gerados por IA.
 - [Kura Lab](https://kuralab.com.br/): marketplace que reúne lojas de brechó em uma só busca.
-- [Tribet Cash Poker](https://tribet-cash-poker.vercel.app/): landing page para sala de poker em Campo Grande.
-- [MP Engenharia](https://mp-engenharia.vercel.app/): site institucional de escritório de engenharia e arquitetura.
+- [Cutelaria Estância Gaúcha](https://www.cutelariaestanciagaucha.com.br/): facas artesanais e empório gaúcho em Campo Grande, com envio nacional.
+- [MP Engenharia](https://www.mp-engenhariaarquitetura.com.br/): site institucional de escritório de engenharia e arquitetura.
 - [Axa Foto Autorizada](https://axa-foto.vercel.app/): assistência técnica autorizada para câmeras, atuando desde 1998.
 - [Viva Espaço de Beleza](https://viva-espaco-beleza.vercel.app/): salão de beleza inclusivo em Campo Grande.
 - [Amaná Makramiya](https://amana-macrame.vercel.app/): ateliê de macramê com peças artesanais e atendimento nacional.
