@@ -88,6 +88,9 @@ const imageUrl = new URL(image, Astro.site).href;
 
 <script>
   import '../scripts/ui.js';
+  /* Three.js só é baixado em páginas que têm o campo de blocos */
+  if (document.querySelector('[data-cube-field]')) import('../scripts/cube-field.js');
+  if (document.querySelector('[data-scene]')) import('../scripts/scenes/index.js');
 </script>
 
 </body>
