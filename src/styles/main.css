@@ -224,7 +224,8 @@
   }
   .process-track.has-scene::before { opacity: 0; }
   .process-step__num { transition: background .4s ease, color .12s ease, transform .4s cubic-bezier(.34,1.56,.64,1), box-shadow .4s ease; }
-  .process-step__num.is-active {
+  /* Especificidade acima de .process-step:nth-child(n) .process-step__num */
+  .process-track .process-step .process-step__num.is-active {
     background: var(--accent); border-color: var(--accent); color: #fff;
     transform: scale(1.08);
     box-shadow: 0 0 0 6px var(--surface), 0 8px 24px rgba(55,122,185,0.35);
@@ -234,6 +235,7 @@
     .process-scene {
       position: relative; top: auto; left: auto; right: auto;
       grid-column: 1 / -1; height: 72px; margin-bottom: 8px;
+      order: -1; /* é o último filho no HTML, mas aparece acima das etapas */
     }
   }
 
