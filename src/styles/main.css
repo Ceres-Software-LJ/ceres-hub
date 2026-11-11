@@ -198,7 +198,23 @@
     transition: opacity .6s ease;
   }
   .has-scene > svg { opacity: 0; }
-  .member-card__photo .scene-canvas { z-index: 2; }
+  /* Linha que percorre a borda da foto da equipe — ritmo constante, sem reagir a hover */
+  .photo-frame {
+    position: absolute; inset: 12px; z-index: 2;
+    width: calc(100% - 24px); height: calc(100% - 24px);
+    overflow: visible; pointer-events: none;
+    filter: drop-shadow(0 0 6px rgba(91,160,219,0.85));
+  }
+  .photo-frame rect { fill: none; stroke-linecap: round; }
+  .photo-frame__track { stroke: rgba(232,240,250,0.18); stroke-width: 1; }
+  .photo-frame__line {
+    stroke: var(--sky); stroke-width: 2.5;
+    stroke-dasharray: 22 28; /* duas linhas em lados opostos */
+    animation: photoFrame 9s linear infinite;
+  }
+  .member-card:nth-child(2) .photo-frame__line { animation-delay: -2.2s; }
+  @keyframes photoFrame { to { stroke-dashoffset: -100; } }
+  @media (prefers-reduced-motion: reduce) { .photo-frame__line { animation: none; } }
   .member-card__role-badge { z-index: 3; }
 
   .process-scene {
@@ -207,13 +223,19 @@
     pointer-events: none;
   }
   .process-track.has-scene::before { opacity: 0; }
-  .process-step__num { transition: background .4s ease, color .4s ease, transform .4s cubic-bezier(.34,1.56,.64,1), box-shadow .4s ease; }
+  .process-step__num { transition: background .4s ease, color .12s ease, transform .4s cubic-bezier(.34,1.56,.64,1), box-shadow .4s ease; }
   .process-step__num.is-active {
     background: var(--accent); border-color: var(--accent); color: #fff;
     transform: scale(1.08);
     box-shadow: 0 0 0 6px var(--surface), 0 8px 24px rgba(55,122,185,0.35);
   }
-  @media (max-width: 900px) { .process-scene { display: none; } }
+  /* No celular a linha do processo some; a cena vira uma faixa acima das etapas */
+  @media (max-width: 900px) {
+    .process-scene {
+      position: relative; top: auto; left: auto; right: auto;
+      grid-column: 1 / -1; height: 72px; margin-bottom: 8px;
+    }
+  }
 
   .hero__inner {
     position: relative; z-index: 2;

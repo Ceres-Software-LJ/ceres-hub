@@ -5,7 +5,6 @@
 ════════════════════════════════════════ */
 import * as THREE from 'three';
 
-const HOVER_EASE = 0.08;
 const STATIC_FRAME_TIME = 2.6; // segundos — quadro mostrado com movimento reduzido
 
 export function createStage() {
@@ -36,7 +35,6 @@ export function createStage() {
   function draw(view, t, dt) {
     const w = view.canvas.width, h = view.canvas.height;
     if (!w || !h) return;
-    view.hover += ((view.hoverTarget ? 1 : 0) - view.hover) * HOVER_EASE;
     view.instance.update(t, dt, view);
     ensureBuffer(w, h);
     renderer.setViewport(0, 0, w, h);
@@ -84,15 +82,13 @@ export function createStage() {
 
   return {
     reduceMotion,
-    /** Liga uma cena a um elemento; `hoverRoot` é quem ativa o estado de hover. */
-    mount(host, instance, hoverRoot = host) {
+    /** Liga uma cena a um elemento. A animação não reage a hover: segue sempre no mesmo ritmo. */
+    mount(host, instance) {
       const canvas = document.createElement('canvas');
       canvas.className = 'scene-canvas';
       canvas.setAttribute('aria-hidden', 'true');
       host.appendChild(canvas);
-      const view = { host, canvas, ctx: canvas.getContext('2d'), instance, hover: 0, hoverTarget: false, width: 0, height: 0 };
-      hoverRoot.addEventListener('pointerenter', () => { view.hoverTarget = true; });
-      hoverRoot.addEventListener('pointerleave', () => { view.hoverTarget = false; });
+      const view = { host, canvas, ctx: canvas.getContext('2d'), instance, width: 0, height: 0 };
       views.push(view);
       ro.observe(host);
       io.observe(host);

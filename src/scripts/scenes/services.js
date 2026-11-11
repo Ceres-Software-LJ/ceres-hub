@@ -41,9 +41,9 @@ export function websites() {
   return {
     scene, camera, resize,
     update(t, _dt, view) {
-      const speed = 1 + view.hover * 0.6;
-      const local = (t * speed) % CYCLE;
-      page.rotation.y = Math.sin(t * 0.4) * 0.18 + view.hover * 0.25;
+
+      const local = t % CYCLE;
+      page.rotation.y = Math.sin(t * 0.4) * 0.18;
       for (const b of blocks) {
         const drop = smooth(clamp01((local - b.delay) / 0.6));      // entra
         const lift = smooth(clamp01((local - 4.1 - b.delay * 0.2) / 0.5)); // sai
@@ -89,7 +89,7 @@ export function domains() {
   return {
     scene, camera, resize,
     update(t, dt, view) {
-      globe.rotation.y += dt * (0.25 + view.hover * 0.6);
+      globe.rotation.y += dt * 0.25;
       globe.rotation.x = 0.35;
       for (const a of arcs) a.curve.getPoint((t * 0.35 + a.offset) % 1, a.spark.position);
     },
@@ -116,7 +116,7 @@ export function seo() {
   return {
     scene, camera, resize,
     update(t, _dt, view) {
-      const local = (t * (1 + view.hover * 0.5)) % CYCLE;
+      const local = t % CYCLE;
       const fade = 1 - smooth(clamp01((local - 3.8) / 0.6));
       bars.forEach((bar, i) => {
         const grow = smooth(clamp01((local - i * 0.25) / 0.7)) * fade;
@@ -171,7 +171,7 @@ export function support() {
   return {
     scene, camera, resize,
     update(t, dt, view) {
-      const speed = 0.6 + view.hover * 1.4;
+      const speed = 0.6;
       big.rotation.z += dt * speed;
       small.rotation.z -= dt * speed * (12 / 8); // relação de dentes
       gears.rotation.y = Math.sin(t * 0.6) * 0.25;

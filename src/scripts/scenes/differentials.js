@@ -26,7 +26,7 @@ export function uniqueDesign() {
   return {
     scene, camera, resize,
     update(t, dt, view) {
-      const amp = 0.18 + view.hover * 0.14;
+      const amp = 0.2;
       for (let i = 0; i < pos.count; i++) {
         v.set(base[i * 3], base[i * 3 + 1], base[i * 3 + 2]);
         const n = Math.sin(v.x * 2.1 + t * 1.1) * Math.sin(v.y * 2.4 + t * 0.9) * Math.sin(v.z * 1.9 + t * 1.3);
@@ -69,7 +69,7 @@ export function endToEnd() {
   return {
     scene, camera, resize,
     update(t, dt, view) {
-      const u = ((t * (1 + view.hover * 0.6)) % CYCLE) / CYCLE;
+      const u = (t % CYCLE) / CYCLE;
       curve.getPoint(u, spark.position);
       spark.position.y = 0.35;
       for (const node of nodes) {
@@ -105,7 +105,7 @@ export function speed() {
   return {
     scene, camera, resize,
     update(t, dt, view) {
-      const boost = 1 + view.hover * 1.5;
+      const boost = 1.4;
       data.forEach((s, i) => {
         s.z += s.speed * boost * dt;
         if (s.z > 6) s.z -= 36;
