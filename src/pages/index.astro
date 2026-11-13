@@ -15,10 +15,30 @@ import faq from '../data/faq.json';
 >
   <JsonLd slot="head" nodes={[organization, website, faq]} />
 
+<!-- ══ INTRO OVERLAY ══ -->
+<div id="intro-overlay" aria-hidden="true">
+  <div class="intro__letters">
+    <span class="intro__letter"><span class="intro__fill">C</span>C</span>
+    <span class="intro__letter"><span class="intro__fill">É</span>É</span>
+    <span class="intro__letter"><span class="intro__fill">R</span>R</span>
+    <span class="intro__letter"><span class="intro__fill">E</span>E</span>
+    <span class="intro__letter"><span class="intro__fill">S</span>S</span>
+  </div>
+</div>
+
 <main id="conteudo-principal">
 
 <!-- ══ HERO ══ -->
 <section class="hero" id="home">
+  <!-- Vertical ticker background -->
+  <div class="hero__bg-ticker" aria-hidden="true">
+    <div class="hero__ticker-track">
+      <span>CÉRES</span><span>CÉRES</span><span>CÉRES</span>
+      <span>CÉRES</span><span>CÉRES</span><span>CÉRES</span>
+      <span>CÉRES</span><span>CÉRES</span><span>CÉRES</span>
+      <span>CÉRES</span><span>CÉRES</span><span>CÉRES</span>
+    </div>
+  </div>
   <div class="hero__grid-lines" aria-hidden="true"></div>
   <div class="cube-field cube-field--hero" data-cube-field="hero" aria-hidden="true"></div>
   <div class="hero__inner">
@@ -678,25 +698,94 @@ import faq from '../data/faq.json';
 </main>
 
 <style>
-  /* Split letter — hero h1 */
-  .hero__title .split-letter {
+  /* ── INTRO OVERLAY ── */
+  #intro-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: #0D1B2A;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .intro__letters {
+    display: flex;
+    align-items: baseline;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: clamp(52px, 18vw, 280px);
+    letter-spacing: -0.03em;
+    line-height: 1;
+    color: rgba(255, 255, 255, 0.07);
+    transform-origin: center center;
+  }
+
+  .intro__letter {
+    position: relative;
     display: inline-block;
-    will-change: opacity, transform;
   }
 
-  /* Clip-path initial state para elementos revelados via GSAP */
-  .section-title,
-  .eyebrow {
-    will-change: clip-path, transform;
+  .intro__fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    color: transparent;
+    background: linear-gradient(to top, #1A3A5C 0%, #3A80C3 55%, #A8D4F5 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    clip-path: inset(100% 0 0 0);
+    pointer-events: none;
+    white-space: pre;
   }
 
-  /* Portfolio card: overflow hidden para o zoom da imagem */
+  /* ── HERO VERTICAL TICKER ── */
+  .hero__bg-ticker {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    z-index: 1;
+  }
+
+  .hero__ticker-track {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: ticker-v 12s linear infinite;
+  }
+
+  .hero__ticker-track span {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 26vw;
+    line-height: 0.88;
+    letter-spacing: -0.03em;
+    color: rgba(255, 255, 255, 0.035);
+    white-space: nowrap;
+    user-select: none;
+  }
+
+  @keyframes ticker-v {
+    from { transform: translateY(0); }
+    to   { transform: translateY(-50%); }
+  }
+
+  /* ── GSAP helpers ── */
+  .hero__title .split-letter { display: inline-block; will-change: opacity, transform; }
+  .section-title, .eyebrow   { will-change: clip-path, transform; }
   .project-card { overflow: hidden; }
-  .browser-mock  { overflow: hidden; }
+  .browser-mock { overflow: hidden; }
 </style>
 
 <script>
   import '../scripts/gsap-motion.js';
+  import '../scripts/intro.js';
 </script>
 
 </Base>
