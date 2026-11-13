@@ -677,4 +677,26 @@ import faq from '../data/faq.json';
 
 </main>
 
+<style>
+  /* Split letter — hero h1 */
+  .hero__title .split-letter {
+    display: inline-block;
+    will-change: opacity, transform;
+  }
+
+  /* Clip-path initial state para elementos revelados via GSAP */
+  .section-title,
+  .eyebrow {
+    will-change: clip-path, transform;
+  }
+
+  /* Portfolio card: overflow hidden para o zoom da imagem */
+  .project-card { overflow: hidden; }
+  .browser-mock  { overflow: hidden; }
+</style>
+
+<script>
+  import '../scripts/gsap-motion.js';
+</script>
+
 </Base>
