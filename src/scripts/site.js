@@ -11,7 +11,7 @@ const VIEW_ROUTES = { home: '/', library: '/portfolio/', about: '/sobre/' };
 const VIEW_META = JSON.parse(document.getElementById('views-meta')?.textContent || '{}');
 
 /* =====================================================================
-   CERES® — protótipo single-file
+   CÉRES® — protótipo single-file
    Réplica estrutural da experiência (intro de letras -> formas pretas,
    UI com reveal de linhas, botão cursor-follow, wheel de polaroids).
    Todo o código e conteúdo são originais.
@@ -44,7 +44,7 @@ const ITEMS = [
   {num:8,title:'Amaná Makramiya',domain:'amana-macrame.vercel.app',tags:['Artesanato','E-commerce'],g:'g8',tag:'Amaná',
    desc:'“Feito à mão, para permanecer.” Ateliê de macramê com peças decorativas 100% artesanais: painéis, luminárias e espelhos personalizáveis, atendimento nacional.',
    url:'https://amana-macrame.vercel.app/',cta:'Visitar site'},
-  {num:9,title:'Seu projeto aqui',domain:'ceres hub',tags:['Vamos conversar'],g:'g9',tag:'+',
+  {num:9,title:'Seu projeto aqui',domain:'céres hub',tags:['Vamos conversar'],g:'g9',tag:'+',
    desc:'Tem um projeto em mente? Vamos conversar sobre como transformar sua ideia em realidade digital.',
    url:'https://wa.me/5567992473726',cta:'Iniciar conversa'},
 ];
