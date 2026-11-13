@@ -41,7 +41,7 @@ button{font:inherit;background:none;border:none;color:inherit;cursor:pointer}
 /* ============ NAV (compartilhada) ============ */
 .nav{
   position:fixed;top:0;left:0;right:0;z-index:40;
-  display:flex;align-items:flex-start;justify-content:space-between;
+  display:flex;align-items:center;justify-content:space-between;
   padding:1.1rem 1.25rem;
   pointer-events:none;
   color:#fff;mix-blend-mode:difference; /* preto sobre cinza, branco sobre preto */
@@ -67,7 +67,7 @@ button{font:inherit;background:none;border:none;color:inherit;cursor:pointer}
 
 /* marca (sem blend) + texto "Céres Hub" ao lado, com o efeito de blend do nav */
 #nav-mark{position:fixed;transition:transform .9s var(--ease-out-expo);left:1.25rem;top:.95rem;width:36px;height:auto;z-index:41;pointer-events:none}
-.nav-logo{display:flex;align-items:center;min-height:36px;padding-left:46px;margin-top:-.15rem;white-space:nowrap;transition:padding-left .9s var(--ease-out-expo)}
+.nav-logo{display:flex;align-items:center;min-height:36px;padding-left:46px;white-space:nowrap;transition:padding-left .9s var(--ease-out-expo)}
 .nav.no-mark .nav-logo{padding-left:0}
 #nav-mark.off{transform:translateX(-14px)}
 .home-brandline{visibility:hidden}
