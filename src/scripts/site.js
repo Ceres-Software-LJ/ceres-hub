@@ -287,9 +287,9 @@ function goTo(view){
     const H=()=>innerHeight*1.02;
     gsap.set(wipe,{y:H()});
     const tl=gsap.timeline({onComplete:()=>{transitioning=false;gsap.set(wipe,{y:H()});}});
-    tl.to(wipe,{y:0,duration:1.25,ease:'expo.inOut'})
+    tl.to(wipe,{y:0,duration:0.65,ease:'expo.inOut'})
       .add(()=>{ swapViews('about'); const v=document.getElementById('view-about'); if(v) v.scrollTop=0; })
-      .to(wipe,{y:()=>-H(),duration:1.15,ease:'expo.inOut'},'+=.25');
+      .to(wipe,{y:()=>-H(),duration:0.6,ease:'expo.inOut'},'+=.05');
     return;
   }
   // transições que envolvem a tela Sobre usam um véu escuro
@@ -546,16 +546,19 @@ function stepForward(){
 }
 
 /* toque / arraste / clique */
-let dragX=null, downX=0, downY=0, downTarget=null;
+let dragX=null, dragY=null, downX=0, downY=0, downTarget=null;
 viewLib.addEventListener('pointerdown',e=>{
-  if(panelOpen){ dragX=null; return; }
-  dragX=e.clientX; downX=e.clientX; downY=e.clientY; downTarget=e.target;
+  if(panelOpen){ dragX=null; dragY=null; return; }
+  dragX=e.clientX; dragY=e.clientY; downX=e.clientX; downY=e.clientY; downTarget=e.target;
 });
 addEventListener('pointermove',e=>{
   if(dragX===null||current!=='library'||panelOpen)return;
   const dx=dragX-e.clientX;
-  if(atEnd() && dx>0){ overPush(dx*5); dragX=e.clientX; return; }
-  nudge(dx*0.12); dragX=e.clientX;
+  const dy=dragY-e.clientY;
+  // vertical swipe (mobile) ou horizontal (mouse/tablet): usa o eixo dominante
+  const delta = Math.abs(dy)>Math.abs(dx) ? dy*0.4 : dx*0.25;
+  if(atEnd() && delta>0){ overPush(Math.abs(delta)*5); dragX=e.clientX; dragY=e.clientY; return; }
+  nudge(delta); dragX=e.clientX; dragY=e.clientY;
 });
 addEventListener('pointerup',e=>{
   if(dragX===null) return;
