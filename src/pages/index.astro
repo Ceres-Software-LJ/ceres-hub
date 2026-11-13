@@ -30,58 +30,36 @@ import faq from '../data/faq.json';
 
 <!-- ══ HERO ══ -->
 <section class="hero" id="home">
-  <!-- Vertical ticker background -->
-  <div class="hero__bg-ticker" aria-hidden="true">
-    <div class="hero__ticker-track">
+  <!-- BIG LETTER BACKGROUND — deitado, rolando vertical -->
+  <div class="hero__letter-bg" aria-hidden="true">
+    <div class="hero__letter-track">
       <span>CÉRES</span><span>CÉRES</span><span>CÉRES</span>
       <span>CÉRES</span><span>CÉRES</span><span>CÉRES</span>
       <span>CÉRES</span><span>CÉRES</span><span>CÉRES</span>
       <span>CÉRES</span><span>CÉRES</span><span>CÉRES</span>
     </div>
   </div>
-  <div class="hero__grid-lines" aria-hidden="true"></div>
-  <div class="cube-field cube-field--hero" data-cube-field="hero" aria-hidden="true"></div>
-  <div class="hero__inner">
-    <div class="hero__content">
-      <div class="hero__eyebrow">
-        <span class="hero__eyebrow-dot"></span>
-        <span>Agência Digital · Mato Grosso do Sul</span>
-      </div>
-      <h1 class="hero__title">
-        Seu trabalho merece ser <em>visto.</em>
-      </h1>
-      <p class="hero__sub">
-        Criamos sites que contam a sua história e aproximam você dos seus clientes. Atendemos todo o Brasil, e presencialmente em Campo Grande, MS.
-      </p>
-      <div class="hero__actions">
-        <a href="/#portfolio" class="btn btn--primary">
-          Ver Portfólio
-          <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 9h12M10 4l5 5-5 5"/></svg>
-        </a>
-        <a href="https://wa.me/5567992473726" target="_blank" rel="noopener" class="btn btn--ghost">
-          <svg viewBox="0 0 18 18" fill="currentColor"><path d="M9 0C4.03 0 0 4.03 0 9c0 1.59.42 3.07 1.14 4.36L0 18l4.76-1.12C6.01 17.6 7.47 18 9 18c4.97 0 9-4.03 9-9s-4.03-9-9-9zm4.64 12.36c-.19.54-.97 1.03-1.59 1.17-.42.09-.97.16-2.82-.61-2.36-.96-3.88-3.35-4-3.5-.11-.15-.94-1.26-.94-2.4 0-1.14.59-1.7.8-1.93.21-.23.46-.29.61-.29.15 0 .31.001.44.007.15.007.36-.056.56.43.21.5.7 1.74.76 1.87.06.13.1.28.02.45-.08.17-.12.28-.24.43-.12.15-.26.33-.37.44-.12.12-.24.25-.1.49.14.24.61.99 1.3 1.6.9.79 1.65 1.04 1.89 1.16.24.12.38.1.52-.06.14-.16.6-.7.76-.94.16-.24.31-.2.52-.12.21.08 1.31.62 1.54.73.23.11.39.17.45.27.05.1.05.59-.14 1.13z"/></svg>
-          Iniciar Projeto
-        </a>
-      </div>
-      <div class="hero__stats">
-        <div>
-          <div class="hero__stat-num">20<span>+</span></div>
-          <div class="hero__stat-label">Projetos entregues</div>
-        </div>
-        <div>
-          <div class="hero__stat-num">100<span>%</span></div>
-          <div class="hero__stat-label">Clientes satisfeitos</div>
-        </div>
-        <div>
-          <div class="hero__stat-num">48<span>h</span></div>
-          <div class="hero__stat-label">Tempo médio de resposta</div>
-        </div>
-      </div>
-    </div>
 
-    <!-- ── MOCKUP STACK ── -->
-    <div class="hero__mockups" aria-hidden="true">
-      <div class="mock-stack">
+  <!-- EDITORIAL OVERLAY -->
+  <div class="hero__editorial">
+    <div class="hero__ed-top">
+      <span class="hero__brand">Céres Hub®</span>
+      <span class="hero__ver">/V.01</span>
+      <span class="hero__year">(2025)</span>
+    </div>
+    <div class="hero__ed-bottom">
+      <div class="hero__ed-desc">
+        <p>(01)</p>
+        <p>Agência Digital · Mato Grosso do Sul.<br>Sites que contam a sua história e<br>aproximam você dos seus clientes.</p>
+      </div>
+      <a href="https://wa.me/5567992473726" target="_blank" rel="noopener" class="hero__ed-cta">
+        Iniciar Projeto →
+      </a>
+    </div>
+  </div>
+
+  <div style="display:none" aria-hidden="true">
+    <div class="mock-stack">
 
         <!-- CARD 1: Clínica — layout hero + avatar + stats + cards -->
         <div class="mock-card" data-pos="front" data-niche="clinica">
@@ -245,9 +223,7 @@ import faq from '../data/faq.json';
         </div>
 
       </div><!-- .mock-stack -->
-    </div><!-- .hero__mockups -->
-
-  </div><!-- .hero__inner -->
+  </div><!-- hidden -->
 </section>
 
 <!-- ══ PORTFOLIO ══ -->
@@ -741,39 +717,118 @@ import faq from '../data/faq.json';
     white-space: pre;
   }
 
-  /* ── HERO VERTICAL TICKER ── */
-  .hero__bg-ticker {
+  /* ── HERO EDITORIAL ── */
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    background: #0D1B2A;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Giant letters — deitado (90° rotated), scrolling vertical */
+  .hero__letter-bg {
     position: absolute;
     inset: 0;
     overflow: hidden;
     pointer-events: none;
     display: flex;
+    align-items: center;
     justify-content: center;
-    align-items: flex-start;
-    z-index: 1;
   }
 
-  .hero__ticker-track {
+  .hero__letter-track {
     display: flex;
     flex-direction: column;
     align-items: center;
-    animation: ticker-v 12s linear infinite;
+    transform: rotate(-90deg);
+    transform-origin: center center;
+    animation: letter-scroll 18s linear infinite;
+    will-change: transform;
   }
 
-  .hero__ticker-track span {
-    font-family: 'Space Grotesk', sans-serif;
-    font-weight: 700;
-    font-size: 26vw;
-    line-height: 0.88;
-    letter-spacing: -0.03em;
-    color: rgba(255, 255, 255, 0.035);
+  .hero__letter-track span {
+    font-family: 'Inter', 'Space Grotesk', sans-serif;
+    font-weight: 900;
+    font-size: 38vw;
+    line-height: 0.82;
+    letter-spacing: -0.05em;
+    color: rgba(255, 255, 255, 0.07);
     white-space: nowrap;
     user-select: none;
+    display: block;
   }
 
-  @keyframes ticker-v {
-    from { transform: translateY(0); }
-    to   { transform: translateY(-50%); }
+  @keyframes letter-scroll {
+    from { transform: rotate(-90deg) translateX(0); }
+    to   { transform: rotate(-90deg) translateX(-50%); }
+  }
+
+  /* Editorial content overlay */
+  .hero__editorial {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+    padding: 5rem 3rem 3rem;
+    color: #fff;
+  }
+
+  .hero__ed-top {
+    display: flex;
+    align-items: baseline;
+    gap: 2rem;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+    font-size: clamp(1rem, 1.5vw, 1.4rem);
+    letter-spacing: -0.01em;
+  }
+
+  .hero__brand { color: #fff; }
+  .hero__ver   { color: rgba(255,255,255,0.45); }
+  .hero__year  { color: rgba(255,255,255,0.45); margin-left: auto; }
+
+  .hero__ed-bottom {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+
+  .hero__ed-desc {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(0.8rem, 1.1vw, 1rem);
+    line-height: 1.6;
+    color: rgba(255,255,255,0.55);
+    max-width: 340px;
+  }
+
+  .hero__ed-desc p:first-child {
+    color: rgba(255,255,255,0.3);
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.5rem;
+  }
+
+  .hero__ed-cta {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+    font-size: clamp(0.9rem, 1.2vw, 1.1rem);
+    color: #fff;
+    text-decoration: none;
+    letter-spacing: -0.01em;
+    border-bottom: 1px solid rgba(255,255,255,0.3);
+    padding-bottom: 0.25rem;
+    white-space: nowrap;
+    transition: color 0.3s, border-color 0.3s;
+  }
+
+  .hero__ed-cta:hover {
+    color: #A8D4F5;
+    border-color: #A8D4F5;
   }
 
   /* ── GSAP helpers ── */
