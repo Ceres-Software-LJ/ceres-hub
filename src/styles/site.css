@@ -240,12 +240,12 @@ button{font:inherit;background:none;border:none;color:inherit;cursor:pointer}
 @media (max-width:860px){
   .home-top{display:flex;flex-direction:column;gap:1.2rem}
   .home-paragraph{max-width:34ch}
-  .home-center{display:flex;flex-direction:column;align-items:flex-start;gap:.1em}
-  .home-center{flex-direction:column;align-items:flex-start;gap:0}
+  .home-center{position:relative;top:auto;left:auto;right:auto;transform:none;padding:0;display:flex;flex-direction:column;align-items:flex-start;gap:0}
   .giant{font-size:clamp(2.6rem,12vw,5rem)}
   .home-bottom{display:flex;flex-direction:column;align-items:flex-start;gap:1.2rem}
   .home-meta{align-self:flex-end}
-  .cursor-area{inset:40% 6% 26%}
+  .cursor-area{position:relative;inset:auto;display:flex;align-items:center;padding:.5rem 0}
+  .btn-enter{position:relative;left:auto;top:auto;transform:none}
   .lib-item-title{max-width:100%;font-size:clamp(2rem,9vw,3.6rem)}
   .lib-item-next{font-size:clamp(1.4rem,7vw,2.6rem)}
   .lib-item-row{flex-direction:column;gap:.7rem}
