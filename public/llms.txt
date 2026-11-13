@@ -19,7 +19,8 @@
 
 ## Páginas
 
-- [Início](https://www.cereshub.com.br/): apresentação da agência, portfólio, serviços, processo e perguntas frequentes.
+- [Início](https://www.cereshub.com.br/): apresentação da agência.
+- [Portfólio](https://www.cereshub.com.br/portfolio/): os sites que a agência já colocou no ar.
 - [Sobre](https://www.cereshub.com.br/sobre/): quem é a equipe, as quatro etapas do processo, onde a agência atende, e como preço e prazo são definidos.
 - [Contato](https://www.cereshub.com.br/contato/): canais de contato e o que acontece depois do primeiro contato.
 - [Blog](https://www.cereshub.com.br/blog/): artigos sobre criar, registrar e manter um site.

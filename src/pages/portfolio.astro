@@ -1,0 +1,42 @@
+---
+import Site from '../layouts/Site.astro';
+import JsonLd from '../components/JsonLd.astro';
+import organization from '../data/organization.json';
+import { breadcrumb, webPage, ORG_ID, SITE } from '../lib/schema.js';
+import { VIEWS } from '../data/views.js';
+
+const { title, description, path } = VIEWS.library;
+
+// Sites listados na roda do portfólio (mesma ordem da tela).
+const projetos = [
+  { nome: 'FlowBloc', url: 'https://flowbloc.com.br/' },
+  { nome: 'FinBloc', url: 'https://finbloc.com.br/' },
+  { nome: 'Kura Lab', url: 'https://kuralab.com.br/' },
+  { nome: 'Cutelaria Estância Gaúcha', url: 'https://www.cutelariaestanciagaucha.com.br/' },
+  { nome: 'MP Engenharia', url: 'https://www.mp-engenhariaarquitetura.com.br/' },
+  { nome: 'Axa Foto Autorizada', url: 'https://axa-foto.vercel.app/' },
+  { nome: 'Viva Espaço de Beleza', url: 'https://viva-espaco-beleza.vercel.app/' },
+  { nome: 'Amaná Makramiya', url: 'https://amana-macrame.vercel.app/' },
+];
+
+const schema = [
+  { ...organization, '@id': ORG_ID },
+  {
+    ...webPage('CollectionPage', { path, name: title, description }),
+    mainEntity: {
+      '@type': 'ItemList',
+      itemListElement: projetos.map((p, i) => ({
+        '@type': 'ListItem',
+        position: i + 1,
+        name: p.nome,
+        url: p.url,
+      })),
+    },
+  },
+  breadcrumb([{ label: 'Portfólio', href: path }]),
+];
+---
+
+<Site view="library">
+  <JsonLd slot="head" nodes={schema} />
+</Site>

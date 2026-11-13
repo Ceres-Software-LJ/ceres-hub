@@ -1,0 +1,101 @@
+---
+// Layout do novo site (home, portfólio e sobre). As três telas vivem na mesma
+// página para as transições animadas funcionarem, mas cada rota entrega no HTML
+// estático só a tela dela: as outras vão dentro de <template> e entram no DOM
+// pelo JS. Assim o Google lê uma tela por URL, sem texto duplicado.
+import '../styles/site.css';
+import homeHtml from '../components/views/Home.html?raw';
+import libraryHtml from '../components/views/Library.html?raw';
+import aboutHtml from '../components/views/About.html?raw';
+import chromePre from '../components/views/_chrome-pre.html?raw';
+import navHtml from '../components/views/_nav.html?raw';
+import tailHtml from '../components/views/_tail.html?raw';
+import { VIEWS, viewsMeta } from '../data/views.js';
+
+interface Props {
+  view: 'home' | 'library' | 'about';
+  /** Caminho a partir da raiz, ex.: /assets/images/brand/logo.png */
+  image?: string;
+  imageAlt?: string;
+}
+
+const {
+  view,
+  image = '/assets/images/brand/logo.png',
+  imageAlt = 'Logotipo da Céres Hub Soluções Digitais',
+} = Astro.props;
+
+const meta = VIEWS[view];
+const { title, description } = meta;
+const ogDescription = meta.ogDescription ?? description;
+const twitterDescription = meta.twitterDescription ?? description;
+const canonical = new URL(Astro.url.pathname, Astro.site).href;
+const imageUrl = new URL(image, Astro.site).href;
+
+// A tela da rota já nasce ativa; as outras nascem sem a classe.
+const withState = (id: string, html: string) => {
+  const limpo = html.replace(/(<section class="view [^"]*?)\s+is-active"/, '$1"');
+  return id === view ? limpo.replace(/(<section class="view [^"]*?)"/, '$1 is-active"') : limpo;
+};
+const parts = [
+  { id: 'home', html: withState('home', homeHtml) },
+  { id: 'library', html: withState('library', libraryHtml) },
+  { id: 'about', html: withState('about', aboutHtml) },
+];
+---
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content={description}>
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#0d151f">
+  <meta property="og:title" content={title}>
+  <meta property="og:description" content={ogDescription}>
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:url" content={canonical}>
+  <meta property="og:image" content={imageUrl}>
+  <meta property="og:image:alt" content={imageAlt}>
+  <meta property="og:site_name" content="Céres Hub">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content={title}>
+  <meta name="twitter:description" content={twitterDescription}>
+  <meta name="twitter:image" content={imageUrl}>
+
+  <!-- Geolocalização (SEO local) -->
+  <meta name="geo.region" content="BR-MS">
+  <meta name="geo.placename" content="Campo Grande">
+  <meta name="geo.position" content="-20.4697;-54.6201">
+  <meta name="ICBM" content="-20.4697, -54.6201">
+  <meta name="author" content="Céres Hub Soluções Digitais">
+
+  <link rel="icon" href="/favicon.png" sizes="192x192" type="image/png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180">
+  <link rel="canonical" href={canonical}>
+  <title>{title}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <slot name="head" />
+</head>
+<body data-view={view}>
+  <Fragment set:html={chromePre} />
+  <Fragment set:html={navHtml} />
+  {parts.map((p) =>
+    p.id === view
+      ? <Fragment set:html={p.html} />
+      : <template data-view={p.id}><Fragment set:html={p.html} /></template>
+  )}
+  <Fragment set:html={tailHtml} />
+
+  <script type="application/json" id="views-meta" set:html={JSON.stringify(viewsMeta)} />
+  <script>
+    import '../scripts/site.js';
+  </script>
+</body>
+</html>

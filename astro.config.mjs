@@ -13,8 +13,9 @@ const SITE = 'https://www.cereshub.com.br';
  * Ao editar o conteúdo de uma destas páginas, atualize a data aqui.
  */
 const LASTMOD_PAGINAS = {
-  '/': '2026-08-31',
-  '/sobre/': '2026-08-31',
+  '/': '2026-11-13',
+  '/portfolio/': '2026-11-13',
+  '/sobre/': '2026-11-13',
   '/contato/': '2026-08-31',
   '/blog/': '2026-08-31',
   '/politica-de-privacidade/': '2026-08-31',

@@ -95,7 +95,7 @@
             }
           ]
         },
-        "url": "https://www.cereshub.com.br/#servicos",
+        "url": "https://www.cereshub.com.br/sobre/",
         "priceCurrency": "BRL",
         "priceSpecification": {
           "@type": "PriceSpecification",
@@ -124,7 +124,7 @@
             }
           ]
         },
-        "url": "https://www.cereshub.com.br/#servicos"
+        "url": "https://www.cereshub.com.br/sobre/"
       },
       {
         "@type": "Offer",
@@ -146,7 +146,7 @@
             }
           ]
         },
-        "url": "https://www.cereshub.com.br/#servicos"
+        "url": "https://www.cereshub.com.br/sobre/"
       },
       {
         "@type": "Offer",
@@ -168,7 +168,7 @@
             }
           ]
         },
-        "url": "https://www.cereshub.com.br/#servicos"
+        "url": "https://www.cereshub.com.br/sobre/"
       }
     ]
   }
