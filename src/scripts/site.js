@@ -1,6 +1,7 @@
 // Gerado a partir do protótipo. GSAP vem do npm (antes era CDN).
 import gsap from 'gsap';
 window.gsap = gsap;
+gsap.ticker.lagSmoothing(0); // evita saltos grandes após tab ficar em background
 
 /* Views que não são a da rota atual vêm dentro de <template> (HTML estático só da página),
    e entram no DOM aqui, antes de qualquer código que as procure. */
@@ -66,12 +67,14 @@ ITEMS.forEach((it,i)=>{ it.img = IMGS[i] || null; });
 const cv = document.getElementById('shapes');
 const cx2 = cv.getContext('2d');
 let W=0,H=0,DPR=1;
+let _cachedFs = -1, _cachedWidths = [], _cachedCap = 0;
 function sizeCanvas(){
-  DPR = Math.min(devicePixelRatio||1, 2);
+  DPR = Math.min(devicePixelRatio||1, 1.5);
   W = innerWidth; H = innerHeight;
   cv.width = W*DPR; cv.height = H*DPR;
   cv.style.width = W+'px'; cv.style.height = H+'px';
   cx2.setTransform(DPR,0,0,DPR,0,0);
+  _cachedFs = -1; // invalidate cache on resize
 }
 sizeCanvas();
 addEventListener('resize', sizeCanvas);
@@ -92,6 +95,7 @@ document.fonts.load('80px "Archivo Black"');
 let lastT = performance.now();
 
 function drawShapes(t){
+  if(document.hidden) return;
   const dt = Math.min((t-lastT)/1000, .05); lastT = t;
   cx2.clearRect(0,0,W,H);
   const fs = W * G.baseSize * G.scale;
@@ -99,8 +103,13 @@ function drawShapes(t){
   cx2.textBaseline = 'alphabetic';
   cx2.textAlign = 'center';
 
-  const cap = cx2.measureText('H').actualBoundingBoxAscent || fs*0.7;
-  const widths = LETTERS.map(ch=>cx2.measureText(ch).width);
+  if(fs !== _cachedFs){
+    _cachedFs = fs;
+    _cachedCap = cx2.measureText('H').actualBoundingBoxAscent || fs*0.7;
+    _cachedWidths = LETTERS.map(ch=>cx2.measureText(ch).width);
+  }
+  const cap = _cachedCap;
+  const widths = _cachedWidths;
   const gapWord = fs*0.02;
   const wordW = widths.reduce((a,b)=>a+b,0) + gapWord*(LETTERS.length-1);
   const cycle = wordW + gapWord;
@@ -388,7 +397,7 @@ function placeStrip(){
   strip.style.transform = `translate3d(${off - stripCycle*1}px,-50%,0)`;
 }
 if(!REDUCED){
-  gsap.ticker.add((t,dt)=>{ stripDrift += dt*0.02*(innerWidth/1920); if(built) placeStrip(); });
+  gsap.ticker.add((t,dt)=>{ if(current!=='library') return; stripDrift += dt*0.02*(innerWidth/1920); if(built) placeStrip(); });
 }
 addEventListener('resize',()=>{ measureStrip(); placeStrip(); });
 function wheelGeom(){
