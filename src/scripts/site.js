@@ -1172,6 +1172,7 @@ viewAbout.addEventListener('scroll',abNavTone,{passive:true});
 
 function enterAbout(){
   viewAbout.scrollTop = 0;
+  SM.cur = 0; SM.target = 0; SM.active = false;
   abPrepare(); drawAboutHero(); abNavTone(); trLayout(); abSecFx(); bandMeasure(); heroIntro();
   document.getElementById('mi-about').classList.add('is-current');
 }
